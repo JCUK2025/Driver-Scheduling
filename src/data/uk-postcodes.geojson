@@ -1,0 +1,621 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [1.3031, 52.6723]
+      },
+      "properties": {
+        "postcode": "NR1",
+        "area": "Norwich",
+        "county": "Norfolk",
+        "country": "England",
+        "region": "East of England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [1.2974, 52.6282]
+      },
+      "properties": {
+        "postcode": "NR2",
+        "area": "Norwich",
+        "county": "Norfolk",
+        "country": "England",
+        "region": "East of England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [1.2847, 52.6456]
+      },
+      "properties": {
+        "postcode": "NR3",
+        "area": "Norwich",
+        "county": "Norfolk",
+        "country": "England",
+        "region": "East of England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [1.3215, 52.6389]
+      },
+      "properties": {
+        "postcode": "NR4",
+        "area": "Norwich",
+        "county": "Norfolk",
+        "country": "England",
+        "region": "East of England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [1.2556, 52.6512]
+      },
+      "properties": {
+        "postcode": "NR5",
+        "area": "Norwich",
+        "county": "Norfolk",
+        "country": "England",
+        "region": "East of England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-0.1278, 51.5074]
+      },
+      "properties": {
+        "postcode": "E1",
+        "area": "East London",
+        "county": "Greater London",
+        "country": "England",
+        "region": "London"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-0.0524, 51.5211]
+      },
+      "properties": {
+        "postcode": "E2",
+        "area": "East London",
+        "county": "Greater London",
+        "country": "England",
+        "region": "London"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-0.0395, 51.5312]
+      },
+      "properties": {
+        "postcode": "E3",
+        "area": "East London",
+        "county": "Greater London",
+        "country": "England",
+        "region": "London"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-2.2426, 53.4808]
+      },
+      "properties": {
+        "postcode": "M1",
+        "area": "Manchester",
+        "county": "Greater Manchester",
+        "country": "England",
+        "region": "North West England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-2.2375, 53.4625]
+      },
+      "properties": {
+        "postcode": "M2",
+        "area": "Manchester",
+        "county": "Greater Manchester",
+        "country": "England",
+        "region": "North West England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-2.2544, 53.4736]
+      },
+      "properties": {
+        "postcode": "M3",
+        "area": "Manchester",
+        "county": "Greater Manchester",
+        "country": "England",
+        "region": "North West England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-2.2089, 53.4792]
+      },
+      "properties": {
+        "postcode": "M4",
+        "area": "Manchester",
+        "county": "Greater Manchester",
+        "country": "England",
+        "region": "North West England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-1.5491, 53.8008]
+      },
+      "properties": {
+        "postcode": "LS1",
+        "area": "Leeds",
+        "county": "West Yorkshire",
+        "country": "England",
+        "region": "Yorkshire and the Humber"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-1.5361, 53.7936]
+      },
+      "properties": {
+        "postcode": "LS2",
+        "area": "Leeds",
+        "county": "West Yorkshire",
+        "country": "England",
+        "region": "Yorkshire and the Humber"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-1.8904, 52.4862]
+      },
+      "properties": {
+        "postcode": "B1",
+        "area": "Birmingham",
+        "county": "West Midlands",
+        "country": "England",
+        "region": "West Midlands"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-1.8987, 52.4724]
+      },
+      "properties": {
+        "postcode": "B2",
+        "area": "Birmingham",
+        "county": "West Midlands",
+        "country": "England",
+        "region": "West Midlands"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-2.5879, 51.4545]
+      },
+      "properties": {
+        "postcode": "BS1",
+        "area": "Bristol",
+        "county": "Bristol",
+        "country": "England",
+        "region": "South West England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-2.5975, 51.4621]
+      },
+      "properties": {
+        "postcode": "BS2",
+        "area": "Bristol",
+        "county": "Bristol",
+        "country": "England",
+        "region": "South West England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-4.2576, 55.8642]
+      },
+      "properties": {
+        "postcode": "G1",
+        "area": "Glasgow",
+        "county": "Glasgow City",
+        "country": "Scotland",
+        "region": "Scotland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-4.2615, 55.8578]
+      },
+      "properties": {
+        "postcode": "G2",
+        "area": "Glasgow",
+        "county": "Glasgow City",
+        "country": "Scotland",
+        "region": "Scotland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-3.1883, 55.9533]
+      },
+      "properties": {
+        "postcode": "EH1",
+        "area": "Edinburgh",
+        "county": "Edinburgh",
+        "country": "Scotland",
+        "region": "Scotland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-3.2015, 55.9485]
+      },
+      "properties": {
+        "postcode": "EH2",
+        "area": "Edinburgh",
+        "county": "Edinburgh",
+        "country": "Scotland",
+        "region": "Scotland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-3.1737, 51.4816]
+      },
+      "properties": {
+        "postcode": "CF10",
+        "area": "Cardiff",
+        "county": "Cardiff",
+        "country": "Wales",
+        "region": "Wales"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-3.1824, 51.4889]
+      },
+      "properties": {
+        "postcode": "CF11",
+        "area": "Cardiff",
+        "county": "Cardiff",
+        "country": "Wales",
+        "region": "Wales"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-5.9301, 54.5973]
+      },
+      "properties": {
+        "postcode": "BT1",
+        "area": "Belfast",
+        "county": "Belfast",
+        "country": "Northern Ireland",
+        "region": "Northern Ireland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-5.9245, 54.5952]
+      },
+      "properties": {
+        "postcode": "BT2",
+        "area": "Belfast",
+        "county": "Belfast",
+        "country": "Northern Ireland",
+        "region": "Northern Ireland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [0.9667, 51.8779]
+      },
+      "properties": {
+        "postcode": "CO1",
+        "area": "Colchester",
+        "county": "Essex",
+        "country": "England",
+        "region": "East of England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [0.9825, 51.8856]
+      },
+      "properties": {
+        "postcode": "CO2",
+        "area": "Colchester",
+        "county": "Essex",
+        "country": "England",
+        "region": "East of England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [1.1581, 52.0816]
+      },
+      "properties": {
+        "postcode": "IP1",
+        "area": "Ipswich",
+        "county": "Suffolk",
+        "country": "England",
+        "region": "East of England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [1.1624, 52.0547]
+      },
+      "properties": {
+        "postcode": "IP2",
+        "area": "Ipswich",
+        "county": "Suffolk",
+        "country": "England",
+        "region": "East of England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-1.6131, 54.9783]
+      },
+      "properties": {
+        "postcode": "NE1",
+        "area": "Newcastle",
+        "county": "Tyne and Wear",
+        "country": "England",
+        "region": "North East England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-1.6218, 54.9689]
+      },
+      "properties": {
+        "postcode": "NE2",
+        "area": "Newcastle",
+        "county": "Tyne and Wear",
+        "country": "England",
+        "region": "North East England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-1.0803, 53.9591]
+      },
+      "properties": {
+        "postcode": "YO1",
+        "area": "York",
+        "county": "North Yorkshire",
+        "country": "England",
+        "region": "Yorkshire and the Humber"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-1.0895, 53.9512]
+      },
+      "properties": {
+        "postcode": "YO10",
+        "area": "York",
+        "county": "North Yorkshire",
+        "country": "England",
+        "region": "Yorkshire and the Humber"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-0.5458, 53.2307]
+      },
+      "properties": {
+        "postcode": "LN1",
+        "area": "Lincoln",
+        "county": "Lincolnshire",
+        "country": "England",
+        "region": "East Midlands"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-0.5325, 53.2186]
+      },
+      "properties": {
+        "postcode": "LN2",
+        "area": "Lincoln",
+        "county": "Lincolnshire",
+        "country": "England",
+        "region": "East Midlands"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-1.4701, 50.9097]
+      },
+      "properties": {
+        "postcode": "SO14",
+        "area": "Southampton",
+        "county": "Hampshire",
+        "country": "England",
+        "region": "South East England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-1.4012, 50.9025]
+      },
+      "properties": {
+        "postcode": "SO15",
+        "area": "Southampton",
+        "county": "Hampshire",
+        "country": "England",
+        "region": "South East England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-1.0872, 50.7967]
+      },
+      "properties": {
+        "postcode": "PO1",
+        "area": "Portsmouth",
+        "county": "Hampshire",
+        "country": "England",
+        "region": "South East England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-1.0945, 50.8112]
+      },
+      "properties": {
+        "postcode": "PO2",
+        "area": "Portsmouth",
+        "county": "Hampshire",
+        "country": "England",
+        "region": "South East England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-0.3707, 51.4429]
+      },
+      "properties": {
+        "postcode": "KT1",
+        "area": "Kingston upon Thames",
+        "county": "Greater London",
+        "country": "England",
+        "region": "London"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-0.3112, 51.4167]
+      },
+      "properties": {
+        "postcode": "SW19",
+        "area": "South West London",
+        "county": "Greater London",
+        "country": "England",
+        "region": "London"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-0.1419, 51.5311]
+      },
+      "properties": {
+        "postcode": "WC1",
+        "area": "West Central London",
+        "county": "Greater London",
+        "country": "England",
+        "region": "London"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-0.1537, 51.5142]
+      },
+      "properties": {
+        "postcode": "WC2",
+        "area": "West Central London",
+        "county": "Greater London",
+        "country": "England",
+        "region": "London"
+      }
+    }
+  ]
+}

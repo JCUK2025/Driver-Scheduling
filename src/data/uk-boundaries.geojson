@@ -1,0 +1,441 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-6.38, 49.87],
+            [1.77, 49.87],
+            [1.77, 60.86],
+            [-6.38, 60.86],
+            [-6.38, 49.87]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "United Kingdom",
+        "type": "country",
+        "country": "United Kingdom"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-5.78, 49.96],
+            [1.76, 49.96],
+            [1.76, 55.81],
+            [-5.78, 55.81],
+            [-5.78, 49.96]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "England",
+        "type": "country",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-5.31, 54.63],
+            [-1.76, 54.63],
+            [-1.76, 58.64],
+            [-5.31, 58.64],
+            [-5.31, 54.63]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Scotland",
+        "type": "country",
+        "country": "Scotland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-5.28, 51.38],
+            [-2.65, 51.38],
+            [-2.65, 53.43],
+            [-5.28, 53.43],
+            [-5.28, 51.38]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Wales",
+        "type": "country",
+        "country": "Wales"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-8.18, 54.02],
+            [-5.43, 54.02],
+            [-5.43, 55.31],
+            [-8.18, 55.31],
+            [-8.18, 54.02]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Northern Ireland",
+        "type": "country",
+        "country": "Northern Ireland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [0.92, 52.36],
+            [1.75, 52.36],
+            [1.75, 52.96],
+            [0.92, 52.96],
+            [0.92, 52.36]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Norfolk",
+        "type": "county",
+        "country": "England",
+        "region": "East of England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-0.51, 51.28],
+            [0.34, 51.28],
+            [0.34, 51.69],
+            [-0.51, 51.69],
+            [-0.51, 51.28]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Greater London",
+        "type": "county",
+        "country": "England",
+        "region": "London"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-2.73, 53.35],
+            [-1.99, 53.35],
+            [-1.99, 53.63],
+            [-2.73, 53.63],
+            [-2.73, 53.35]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Greater Manchester",
+        "type": "county",
+        "country": "England",
+        "region": "North West England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-1.78, 53.69],
+            [-1.20, 53.69],
+            [-1.20, 53.95],
+            [-1.78, 53.95],
+            [-1.78, 53.69]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "West Yorkshire",
+        "type": "county",
+        "country": "England",
+        "region": "Yorkshire and the Humber"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-2.17, 52.36],
+            [-1.73, 52.36],
+            [-1.73, 52.59],
+            [-2.17, 52.59],
+            [-2.17, 52.36]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "West Midlands",
+        "type": "county",
+        "country": "England",
+        "region": "West Midlands"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-2.72, 51.35],
+            [-2.48, 51.35],
+            [-2.48, 51.54],
+            [-2.72, 51.54],
+            [-2.72, 51.35]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Bristol",
+        "type": "county",
+        "country": "England",
+        "region": "South West England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-4.42, 55.76],
+            [-4.10, 55.76],
+            [-4.10, 55.93],
+            [-4.42, 55.93],
+            [-4.42, 55.76]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Glasgow City",
+        "type": "county",
+        "country": "Scotland",
+        "region": "Scotland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-3.33, 55.90],
+            [-3.07, 55.90],
+            [-3.07, 56.00],
+            [-3.33, 56.00],
+            [-3.33, 55.90]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Edinburgh",
+        "type": "county",
+        "country": "Scotland",
+        "region": "Scotland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-3.27, 51.43],
+            [-3.09, 51.43],
+            [-3.09, 51.54],
+            [-3.27, 51.54],
+            [-3.27, 51.43]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Cardiff",
+        "type": "county",
+        "country": "Wales",
+        "region": "Wales"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-6.05, 54.53],
+            [-5.80, 54.53],
+            [-5.80, 54.65],
+            [-6.05, 54.65],
+            [-6.05, 54.53]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Belfast",
+        "type": "county",
+        "country": "Northern Ireland",
+        "region": "Northern Ireland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [0.71, 51.75],
+            [1.36, 51.75],
+            [1.36, 52.06],
+            [0.71, 52.06],
+            [0.71, 51.75]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Essex",
+        "type": "county",
+        "country": "England",
+        "region": "East of England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [0.73, 51.90],
+            [1.76, 51.90],
+            [1.76, 52.42],
+            [0.73, 52.42],
+            [0.73, 51.90]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Suffolk",
+        "type": "county",
+        "country": "England",
+        "region": "East of England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-1.79, 54.88],
+            [-1.42, 54.88],
+            [-1.42, 55.07],
+            [-1.79, 55.07],
+            [-1.79, 54.88]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Tyne and Wear",
+        "type": "county",
+        "country": "England",
+        "region": "North East England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-1.28, 53.87],
+            [-0.88, 53.87],
+            [-0.88, 54.03],
+            [-1.28, 54.03],
+            [-1.28, 53.87]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "North Yorkshire",
+        "type": "county",
+        "country": "England",
+        "region": "Yorkshire and the Humber"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-0.72, 53.08],
+            [-0.38, 53.08],
+            [-0.38, 53.35],
+            [-0.72, 53.35],
+            [-0.72, 53.08]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Lincolnshire",
+        "type": "county",
+        "country": "England",
+        "region": "East Midlands"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-1.63, 50.73],
+            [-1.19, 50.73],
+            [-1.19, 51.06],
+            [-1.63, 51.06],
+            [-1.63, 50.73]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Hampshire",
+        "type": "county",
+        "country": "England",
+        "region": "South East England"
+      }
+    }
+  ]
+}
