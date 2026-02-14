@@ -40,7 +40,9 @@ jobs:
       - name: Copy build to docs folder
         run: |
           cp public/bundle.js docs/bundle.js
-          echo "✅ Bundle copied to docs folder for deployment"
+          cp public/bundle.js.map docs/bundle.js.map 2>/dev/null || echo "No source map to copy"
+          cp public/bundle.js.LICENSE.txt docs/bundle.js.LICENSE.txt 2>/dev/null || echo "No license file to copy"
+          echo "✅ Build artifacts copied to docs folder for deployment"
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
