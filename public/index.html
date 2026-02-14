@@ -745,10 +745,41 @@
             });
         }
 
-        // Find closest color
+        // Find closest color using Euclidean distance in RGB space
         function findClosestColor(targetColor, availableColors) {
-            // Simple color matching - could be improved
-            return availableColors[0]; // For now, just use red
+            // Convert hex to RGB
+            function hexToRgb(hex) {
+                const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+                return result ? {
+                    r: parseInt(result[1], 16),
+                    g: parseInt(result[2], 16),
+                    b: parseInt(result[3], 16)
+                } : { r: 255, g: 0, b: 0 }; // Default to red
+            }
+
+            // Calculate Euclidean distance between two RGB colors
+            function colorDistance(rgb1, rgb2) {
+                return Math.sqrt(
+                    Math.pow(rgb1.r - rgb2.r, 2) +
+                    Math.pow(rgb1.g - rgb2.g, 2) +
+                    Math.pow(rgb1.b - rgb2.b, 2)
+                );
+            }
+
+            const targetRgb = hexToRgb(targetColor);
+            let closestColor = availableColors[0];
+            let minDistance = Infinity;
+
+            availableColors.forEach(color => {
+                const rgb = hexToRgb(color);
+                const distance = colorDistance(targetRgb, rgb);
+                if (distance < minDistance) {
+                    minDistance = distance;
+                    closestColor = color;
+                }
+            });
+
+            return closestColor;
         }
 
         // Edit delivery area

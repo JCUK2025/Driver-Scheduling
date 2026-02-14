@@ -15,15 +15,14 @@ app.use(express.json());
 // MongoDB connection with error handling
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/driver-scheduling';
 
-mongoose.connect(MONGODB_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-})
+mongoose.connect(MONGODB_URI)
 .then(() => {
     console.log('✓ Connected to MongoDB successfully');
 })
 .catch((err) => {
+    const sanitizedUri = MONGODB_URI.replace(/\/\/[^:]+:[^@]+@/, '//***:***@');
     console.warn('⚠ Database connection failed:', err.message);
+    console.warn(`⚠ Attempted to connect to: ${sanitizedUri}`);
     console.warn('⚠ Running without database - API operations will use in-memory storage');
 });
 
