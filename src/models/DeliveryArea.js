@@ -27,6 +27,18 @@ const DeliveryAreaSchema = new mongoose.Schema({
       message: 'At least one postcode is required'
     }
   },
+  deliveryDays: {
+    type: Number,
+    enum: [1, 2, 3],
+    required: [true, 'Delivery days is required'],
+    default: 1
+  },
+  priority: {
+    type: Number,
+    enum: [1, 2],
+    required: [true, 'Priority is required'],
+    default: 1
+  },
   createdAt: { 
     type: Date, 
     default: Date.now 

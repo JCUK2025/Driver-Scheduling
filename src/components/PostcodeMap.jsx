@@ -139,15 +139,23 @@ const PostcodeMap = ({ selectedPostcodes = [], onPostcodeSelect, selectedColour 
       <MapContainer
         center={[54.5, -3.5]}
         zoom={6}
+        minZoom={5}
+        maxZoom={10}
+        maxBounds={[[49.5, -11], [61, 2.5]]}
+        maxBoundsViscosity={0.5}
         style={{ height: '100%', width: '100%' }}
         zoomControl={false}
+        scrollWheelZoom={true}
+        wheelPxPerZoomLevel={120}
+        zoomDelta={0.5}
+        zoomSnap={0.5}
       >
         <TileLayer
           url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
         />
         <GeoJSON
-          key={searchTerm || 'all-features'}
+          key={`postcodes-${selectedPostcodes.join('-')}`}
           data={{ type: 'FeatureCollection', features: filteredFeatures }}
           style={style}
           onEachFeature={onEachFeature}

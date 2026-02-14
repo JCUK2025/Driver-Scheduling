@@ -6,7 +6,9 @@ const DeliveryAreaForm = ({ onSubmit, onCancel, initialData, mode = 'create' }) 
   const [formData, setFormData] = useState({
     name: '',
     colour: '#3498db',
-    postcodes: []
+    postcodes: [],
+    deliveryDays: 1,
+    priority: 1
   });
   const [postcodeInput, setPostcodeInput] = useState('');
   const [errors, setErrors] = useState({});
@@ -17,7 +19,9 @@ const DeliveryAreaForm = ({ onSubmit, onCancel, initialData, mode = 'create' }) 
       setFormData({
         name: initialData.name || '',
         colour: initialData.colour || '#3498db',
-        postcodes: initialData.postcodes || []
+        postcodes: initialData.postcodes || [],
+        deliveryDays: initialData.deliveryDays || 1,
+        priority: initialData.priority || 1
       });
     }
   }, [initialData, mode]);
@@ -189,6 +193,41 @@ const DeliveryAreaForm = ({ onSubmit, onCancel, initialData, mode = 'create' }) 
             />
           </div>
           {errors.colour && <span className="error-message">{errors.colour}</span>}
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="deliveryDays">
+            Delivery Route Duration <span className="required">*</span>
+          </label>
+          <select
+            id="deliveryDays"
+            name="deliveryDays"
+            value={formData.deliveryDays}
+            onChange={handleInputChange}
+            className={errors.deliveryDays ? 'error' : ''}
+          >
+            <option value={1}>1 Day Delivery</option>
+            <option value={2}>2 Day Delivery</option>
+            <option value={3}>3 Day Delivery</option>
+          </select>
+          {errors.deliveryDays && <span className="error-message">{errors.deliveryDays}</span>}
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="priority">
+            Priority <span className="required">*</span>
+          </label>
+          <select
+            id="priority"
+            name="priority"
+            value={formData.priority}
+            onChange={handleInputChange}
+            className={errors.priority ? 'error' : ''}
+          >
+            <option value={1}>Priority 1 (5-10 day delivery)</option>
+            <option value={2}>Priority 2 (10-15 day delivery)</option>
+          </select>
+          {errors.priority && <span className="error-message">{errors.priority}</span>}
         </div>
 
         <div className="form-group">
