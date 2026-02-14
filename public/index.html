@@ -1,1 +1,81 @@
-<!DOCTYPE html>\n<html lang="en">\n<head>\n    <meta charset="UTF-8">\n    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n    <title>Driver Scheduling App</title>\n    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />\n    <script src="https://unpkg.com/react/umd/react.development.js"></script>\n    <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>\n    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>\n    <style>\n        #map {\n            height: 400px;\n            width: 100%;\n        }\n    </style>\n</head>\n<body>\n    <div id="root"></div>\n    <script>\n        const { useEffect } = React;\n        const { createRoot } = ReactDOM;\n        const App = () => {\n            useEffect(() => {\n                const map = L.map('map').setView([51.505, -0.09], 13);\n                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {\n                    maxZoom: 19,\n                    attribution: '© OpenStreetMap contributors'\n                }).addTo(map);\n            }, []);\n            return <div id="map"></div>;\n        };\n        createRoot(document.getElementById('root')).render(<App />);\n    <\/script>\n</body>\n</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delivery Areas Manager</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        body { font-family: Arial, sans-serif; }
+        #map { height: 500px; }
+        .selected { background-color: yellow; }
+    </style>
+</head>
+<body>
+    <h1>Delivery Areas Manager</h1>
+    <div id="map"></div>
+    <h2>Create Delivery Area</h2>
+    <form id="delivery-area-form">
+        <input type="text" id="area-name" placeholder="Area Name" required>
+        <input type="color" id="area-color" value="#ff0000">
+        <button type="submit">Create Area</button>
+    </form>
+    <h2>Selected Postcodes</h2>
+    <ul id="postcode-list"></ul>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        const map = L.map('map').setView([55.3781, -3.4360], 6);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19 }).addTo(map);
+
+        const postcodes = ["E1 6AN", "M1 2GP", "B1 1TB", "LS1 1UR", "NR1 1RJ", "EH1 3QR", "G1 1XX", "DD1 1QP", "CF10 1SX", "SA1 1AA", "BT1 5GS", "SW1A 1AA", "W1A 1AA"];
+        const markers = {};
+        const selectedPostcodes = [];
+
+        postcodes.forEach((postcode, index) => {
+            const lat = 51.505 + (index / 100); // Sample latitude
+            const lon = -0.09 + (index / 50); // Sample longitude
+            markers[postcode] = L.marker([lat, lon]).addTo(map).bindPopup(postcode);
+            markers[postcode].on('click', () => selectPostcode(postcode));
+        });
+
+        function selectPostcode(postcode) {
+            if (!selectedPostcodes.includes(postcode)) {
+                selectedPostcodes.push(postcode);
+                markers[postcode].getElement().classList.add('selected');
+            } else {
+                selectedPostcodes.splice(selectedPostcodes.indexOf(postcode), 1);
+                markers[postcode].getElement().classList.remove('selected');
+            }
+            updatePostcodeList();
+        }
+
+        function updatePostcodeList() {
+            const list = document.getElementById('postcode-list');
+            list.innerHTML = '';
+            selectedPostcodes.forEach(postcode => {
+                const li = document.createElement('li');
+                li.textContent = postcode;
+                const button = document.createElement('button');
+                button.textContent = 'Remove';
+                button.onclick = () => removePostcode(postcode);
+                li.appendChild(button);
+                list.appendChild(li);
+            });
+        }
+
+        function removePostcode(postcode) {
+            selectedPostcodes.splice(selectedPostcodes.indexOf(postcode), 1);
+            updatePostcodeList();
+        }
+
+        document.getElementById('delivery-area-form').onsubmit = (e) => {
+            e.preventDefault();
+            const name = document.getElementById('area-name').value;
+            const color = document.getElementById('area-color').value;
+            console.log('Creating area:', name, color, selectedPostcodes);
+            alert(`Delivery area ${name} created with color ${color}!`);
+        };
+    </script>
+</body>
+</html>
