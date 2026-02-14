@@ -1,4 +1,9 @@
+const mongoose = require('mongoose');
 const DeliveryArea = require('../models/DeliveryArea');
+const inMemoryStore = require('../utils/inMemoryStore');
+
+// Check if MongoDB is connected
+const isMongoConnected = () => mongoose.connection.readyState === 1;
 
 // Create a new delivery area
 const createDeliveryArea = async (req, res) => {
@@ -10,6 +15,16 @@ const createDeliveryArea = async (req, res) => {
       return res.status(400).json({ 
         error: 'Name and at least one postcode are required' 
       });
+    }
+
+    // Use in-memory store if MongoDB not connected
+    if (!isMongoConnected()) {
+      const area = await inMemoryStore.create({
+        name,
+        colour: colour || '#3498db',
+        postcodes: [...new Set(postcodes.map(pc => pc.toUpperCase()))]
+      });
+      return res.status(201).json(area);
     }
 
     const deliveryArea = new DeliveryArea({
@@ -31,6 +46,12 @@ const createDeliveryArea = async (req, res) => {
 // Get all delivery areas
 const getAllDeliveryAreas = async (req, res) => {
   try {
+    // Use in-memory store if MongoDB not connected
+    if (!isMongoConnected()) {
+      const areas = await inMemoryStore.findAll();
+      return res.json(areas);
+    }
+
     const areas = await DeliveryArea.find().sort({ createdAt: -1 });
     res.json(areas);
   } catch (error) {
@@ -41,6 +62,15 @@ const getAllDeliveryAreas = async (req, res) => {
 // Get a single delivery area by ID
 const getDeliveryAreaById = async (req, res) => {
   try {
+    // Use in-memory store if MongoDB not connected
+    if (!isMongoConnected()) {
+      const area = await inMemoryStore.findById(req.params.id);
+      if (!area) {
+        return res.status(404).json({ error: 'Delivery area not found' });
+      }
+      return res.json(area);
+    }
+
     const area = await DeliveryArea.findById(req.params.id);
     if (!area) {
       return res.status(404).json({ error: 'Delivery area not found' });
@@ -61,6 +91,19 @@ const updateDeliveryArea = async (req, res) => {
       return res.status(400).json({ 
         error: 'Name and at least one postcode are required' 
       });
+    }
+
+    // Use in-memory store if MongoDB not connected
+    if (!isMongoConnected()) {
+      const area = await inMemoryStore.update(req.params.id, {
+        name,
+        colour: colour || '#3498db',
+        postcodes: [...new Set(postcodes.map(pc => pc.toUpperCase()))]
+      });
+      if (!area) {
+        return res.status(404).json({ error: 'Delivery area not found' });
+      }
+      return res.json(area);
     }
 
     const area = await DeliveryArea.findById(req.params.id);
@@ -85,6 +128,15 @@ const updateDeliveryArea = async (req, res) => {
 // Delete a delivery area
 const deleteDeliveryArea = async (req, res) => {
   try {
+    // Use in-memory store if MongoDB not connected
+    if (!isMongoConnected()) {
+      const area = await inMemoryStore.delete(req.params.id);
+      if (!area) {
+        return res.status(404).json({ error: 'Delivery area not found' });
+      }
+      return res.json({ message: 'Delivery area deleted successfully', area });
+    }
+
     const area = await DeliveryArea.findByIdAndDelete(req.params.id);
     if (!area) {
       return res.status(404).json({ error: 'Delivery area not found' });
