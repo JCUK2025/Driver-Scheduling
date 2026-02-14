@@ -214,7 +214,7 @@ const DeliveryAreaForm = ({ onSubmit, onCancel, initialData, mode = 'create' }) 
               value={postcodeInput}
               onChange={(e) => setPostcodeInput(e.target.value)}
               onKeyPress={handlePostcodeKeyPress}
-              placeholder="Enter postcode area (e.g., NR, CO, SW)"
+              placeholder="Enter postcode area (e.g., SW, NR, B, E)"
             />
             <button
               type="button"

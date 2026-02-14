@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { MapContainer, TileLayer, GeoJSON, ZoomControl, Tooltip } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import './PostcodeMap.css';
@@ -9,15 +9,17 @@ const PostcodeMap = ({ selectedPostcodes = [], onPostcodeSelect, selectedColour 
   const [searchTerm, setSearchTerm] = useState('');
   const [hoveredArea, setHoveredArea] = useState(null);
 
-  // Filter postcode areas based on search term
-  const filteredFeatures = searchTerm
-    ? postcodeAreasData.features.filter(feature => {
-        const postcode = feature.properties.postcode.toLowerCase();
-        const area = feature.properties.area.toLowerCase();
-        const search = searchTerm.toLowerCase();
-        return postcode.includes(search) || area.includes(search);
-      })
-    : postcodeAreasData.features;
+  // Filter postcode areas based on search term - memoized to avoid recalculation
+  const filteredFeatures = useMemo(() => {
+    if (!searchTerm) return postcodeAreasData.features;
+    
+    return postcodeAreasData.features.filter(feature => {
+      const postcode = feature.properties.postcode.toLowerCase();
+      const area = feature.properties.area.toLowerCase();
+      const search = searchTerm.toLowerCase();
+      return postcode.includes(search) || area.includes(search);
+    });
+  }, [searchTerm]);
 
   // Style function for GeoJSON features
   const style = (feature) => {
@@ -145,7 +147,7 @@ const PostcodeMap = ({ selectedPostcodes = [], onPostcodeSelect, selectedColour 
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
         />
         <GeoJSON
-          key={`${selectedPostcodes.join(',')}-${searchTerm}`}
+          key={searchTerm || 'all-features'}
           data={{ type: 'FeatureCollection', features: filteredFeatures }}
           style={style}
           onEachFeature={onEachFeature}
