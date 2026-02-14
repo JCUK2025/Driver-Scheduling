@@ -1,0 +1,4469 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -2.25,
+              57.3
+            ],
+            [
+              -1.9500000000000002,
+              57.3
+            ],
+            [
+              -1.9500000000000002,
+              57.0
+            ],
+            [
+              -2.25,
+              57.0
+            ],
+            [
+              -2.25,
+              57.3
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "AB",
+        "area": "Aberdeen",
+        "region": "Scotland",
+        "country": "Scotland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.49,
+              51.9
+            ],
+            [
+              -0.19000000000000003,
+              51.9
+            ],
+            [
+              -0.19000000000000003,
+              51.6
+            ],
+            [
+              -0.49,
+              51.6
+            ],
+            [
+              -0.49,
+              51.9
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "AL",
+        "area": "St Albans",
+        "region": "East of England",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -2.05,
+              52.629999999999995
+            ],
+            [
+              -1.75,
+              52.629999999999995
+            ],
+            [
+              -1.75,
+              52.33
+            ],
+            [
+              -2.05,
+              52.33
+            ],
+            [
+              -2.05,
+              52.629999999999995
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "B",
+        "area": "Birmingham",
+        "region": "West Midlands",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -2.51,
+              51.53
+            ],
+            [
+              -2.21,
+              51.53
+            ],
+            [
+              -2.21,
+              51.230000000000004
+            ],
+            [
+              -2.51,
+              51.230000000000004
+            ],
+            [
+              -2.51,
+              51.53
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "BA",
+        "area": "Bath",
+        "region": "South West England",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -2.63,
+              53.9
+            ],
+            [
+              -2.33,
+              53.9
+            ],
+            [
+              -2.33,
+              53.6
+            ],
+            [
+              -2.63,
+              53.6
+            ],
+            [
+              -2.63,
+              53.9
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "BB",
+        "area": "Blackburn",
+        "region": "North West England",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -1.9,
+              53.949999999999996
+            ],
+            [
+              -1.6,
+              53.949999999999996
+            ],
+            [
+              -1.6,
+              53.65
+            ],
+            [
+              -1.9,
+              53.65
+            ],
+            [
+              -1.9,
+              53.949999999999996
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "BD",
+        "area": "Bradford",
+        "region": "Yorkshire and the Humber",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -2.03,
+              50.87
+            ],
+            [
+              -1.73,
+              50.87
+            ],
+            [
+              -1.73,
+              50.57
+            ],
+            [
+              -2.03,
+              50.57
+            ],
+            [
+              -2.03,
+              50.87
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "BH",
+        "area": "Bournemouth",
+        "region": "South West England",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -2.58,
+              53.73
+            ],
+            [
+              -2.2800000000000002,
+              53.73
+            ],
+            [
+              -2.2800000000000002,
+              53.43
+            ],
+            [
+              -2.58,
+              53.43
+            ],
+            [
+              -2.58,
+              53.73
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "BL",
+        "area": "Bolton",
+        "region": "North West England",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.29000000000000004,
+              50.97
+            ],
+            [
+              0.009999999999999981,
+              50.97
+            ],
+            [
+              0.009999999999999981,
+              50.67
+            ],
+            [
+              -0.29000000000000004,
+              50.67
+            ],
+            [
+              -0.29000000000000004,
+              50.97
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "BN",
+        "area": "Brighton",
+        "region": "South East England",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.13,
+              51.559999999999995
+            ],
+            [
+              0.16999999999999998,
+              51.559999999999995
+            ],
+            [
+              0.16999999999999998,
+              51.26
+            ],
+            [
+              -0.13,
+              51.26
+            ],
+            [
+              -0.13,
+              51.559999999999995
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "BR",
+        "area": "Bromley",
+        "region": "London",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -2.7399999999999998,
+              51.6
+            ],
+            [
+              -2.44,
+              51.6
+            ],
+            [
+              -2.44,
+              51.300000000000004
+            ],
+            [
+              -2.7399999999999998,
+              51.300000000000004
+            ],
+            [
+              -2.7399999999999998,
+              51.6
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "BS",
+        "area": "Bristol",
+        "region": "South West England",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.08,
+              54.75
+            ],
+            [
+              -5.779999999999999,
+              54.75
+            ],
+            [
+              -5.779999999999999,
+              54.45
+            ],
+            [
+              -6.08,
+              54.45
+            ],
+            [
+              -6.08,
+              54.75
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "BT",
+        "area": "Belfast",
+        "region": "Northern Ireland",
+        "country": "Northern Ireland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.09,
+              55.04
+            ],
+            [
+              -2.79,
+              55.04
+            ],
+            [
+              -2.79,
+              54.74
+            ],
+            [
+              -3.09,
+              54.74
+            ],
+            [
+              -3.09,
+              55.04
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "CA",
+        "area": "Carlisle",
+        "region": "North West England",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.03,
+              52.35
+            ],
+            [
+              0.27,
+              52.35
+            ],
+            [
+              0.27,
+              52.050000000000004
+            ],
+            [
+              -0.03,
+              52.050000000000004
+            ],
+            [
+              -0.03,
+              52.35
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "CB",
+        "area": "Cambridge",
+        "region": "East of England",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.33,
+              51.629999999999995
+            ],
+            [
+              -3.0300000000000002,
+              51.629999999999995
+            ],
+            [
+              -3.0300000000000002,
+              51.33
+            ],
+            [
+              -3.33,
+              51.33
+            ],
+            [
+              -3.33,
+              51.629999999999995
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "CF",
+        "area": "Cardiff",
+        "region": "Wales",
+        "country": "Wales"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.04,
+              53.339999999999996
+            ],
+            [
+              -2.74,
+              53.339999999999996
+            ],
+            [
+              -2.74,
+              53.04
+            ],
+            [
+              -3.04,
+              53.04
+            ],
+            [
+              -3.04,
+              53.339999999999996
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "CH",
+        "area": "Chester",
+        "region": "North West England",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0.32999999999999996,
+              51.89
+            ],
+            [
+              0.63,
+              51.89
+            ],
+            [
+              0.63,
+              51.59
+            ],
+            [
+              0.32999999999999996,
+              51.59
+            ],
+            [
+              0.32999999999999996,
+              51.89
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "CM",
+        "area": "Chelmsford",
+        "region": "East of England",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0.75,
+              52.04
+            ],
+            [
+              1.05,
+              52.04
+            ],
+            [
+              1.05,
+              51.74
+            ],
+            [
+              0.75,
+              51.74
+            ],
+            [
+              0.75,
+              52.04
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "CO",
+        "area": "Colchester",
+        "region": "East of England",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.25,
+              51.53
+            ],
+            [
+              0.04999999999999999,
+              51.53
+            ],
+            [
+              0.04999999999999999,
+              51.230000000000004
+            ],
+            [
+              -0.25,
+              51.230000000000004
+            ],
+            [
+              -0.25,
+              51.53
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "CR",
+        "area": "Croydon",
+        "region": "London",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0.93,
+              51.43
+            ],
+            [
+              1.23,
+              51.43
+            ],
+            [
+              1.23,
+              51.13
+            ],
+            [
+              0.93,
+              51.13
+            ],
+            [
+              0.93,
+              51.43
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "CT",
+        "area": "Canterbury",
+        "region": "South East England",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -1.66,
+              52.559999999999995
+            ],
+            [
+              -1.36,
+              52.559999999999995
+            ],
+            [
+              -1.36,
+              52.26
+            ],
+            [
+              -1.66,
+              52.26
+            ],
+            [
+              -1.66,
+              52.559999999999995
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "CV",
+        "area": "Coventry",
+        "region": "West Midlands",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -2.59,
+              53.25
+            ],
+            [
+              -2.29,
+              53.25
+            ],
+            [
+              -2.29,
+              52.95
+            ],
+            [
+              -2.59,
+              52.95
+            ],
+            [
+              -2.59,
+              53.25
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "CW",
+        "area": "Crewe",
+        "region": "North West England",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0.07,
+              51.6
+            ],
+            [
+              0.37,
+              51.6
+            ],
+            [
+              0.37,
+              51.300000000000004
+            ],
+            [
+              0.07,
+              51.300000000000004
+            ],
+            [
+              0.07,
+              51.6
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "DA",
+        "area": "Dartford",
+        "region": "South East England",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.12,
+              56.61
+            ],
+            [
+              -2.8200000000000003,
+              56.61
+            ],
+            [
+              -2.8200000000000003,
+              56.31
+            ],
+            [
+              -3.12,
+              56.31
+            ],
+            [
+              -3.12,
+              56.61
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "DD",
+        "area": "Dundee",
+        "region": "Scotland",
+        "country": "Scotland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -1.63,
+              53.07
+            ],
+            [
+              -1.33,
+              53.07
+            ],
+            [
+              -1.33,
+              52.77
+            ],
+            [
+              -1.63,
+              52.77
+            ],
+            [
+              -1.63,
+              53.07
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "DE",
+        "area": "Derby",
+        "region": "East Midlands",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.76,
+              55.22
+            ],
+            [
+              -3.46,
+              55.22
+            ],
+            [
+              -3.46,
+              54.92
+            ],
+            [
+              -3.76,
+              54.92
+            ],
+            [
+              -3.76,
+              55.22
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "DG",
+        "area": "Dumfries",
+        "region": "Scotland",
+        "country": "Scotland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -1.72,
+              54.93
+            ],
+            [
+              -1.4200000000000002,
+              54.93
+            ],
+            [
+              -1.4200000000000002,
+              54.63
+            ],
+            [
+              -1.72,
+              54.63
+            ],
+            [
+              -1.72,
+              54.93
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "DH",
+        "area": "Durham",
+        "region": "North East England",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -1.7,
+              54.68
+            ],
+            [
+              -1.4000000000000001,
+              54.68
+            ],
+            [
+              -1.4000000000000001,
+              54.38
+            ],
+            [
+              -1.7,
+              54.38
+            ],
+            [
+              -1.7,
+              54.68
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "DL",
+        "area": "Darlington",
+        "region": "North East England",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -1.2799999999999998,
+              53.67
+            ],
+            [
+              -0.9799999999999999,
+              53.67
+            ],
+            [
+              -0.9799999999999999,
+              53.370000000000005
+            ],
+            [
+              -1.2799999999999998,
+              53.370000000000005
+            ],
+            [
+              -1.2799999999999998,
+              53.67
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "DN",
+        "area": "Doncaster",
+        "region": "Yorkshire and the Humber",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -2.59,
+              50.86
+            ],
+            [
+              -2.29,
+              50.86
+            ],
+            [
+              -2.29,
+              50.56
+            ],
+            [
+              -2.59,
+              50.56
+            ],
+            [
+              -2.59,
+              50.86
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "DT",
+        "area": "Dorchester",
+        "region": "South West England",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -2.2399999999999998,
+              52.66
+            ],
+            [
+              -1.94,
+              52.66
+            ],
+            [
+              -1.94,
+              52.36
+            ],
+            [
+              -2.2399999999999998,
+              52.36
+            ],
+            [
+              -2.2399999999999998,
+              52.66
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "DY",
+        "area": "Dudley",
+        "region": "West Midlands",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.2,
+              51.69
+            ],
+            [
+              0.09999999999999999,
+              51.69
+            ],
+            [
+              0.09999999999999999,
+              51.39
+            ],
+            [
+              -0.2,
+              51.39
+            ],
+            [
+              -0.2,
+              51.69
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "E",
+        "area": "East London",
+        "region": "London",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.24,
+              51.67
+            ],
+            [
+              0.06,
+              51.67
+            ],
+            [
+              0.06,
+              51.370000000000005
+            ],
+            [
+              -0.24,
+              51.370000000000005
+            ],
+            [
+              -0.24,
+              51.67
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "EC",
+        "area": "East Central London",
+        "region": "London",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.34,
+              56.1
+            ],
+            [
+              -3.04,
+              56.1
+            ],
+            [
+              -3.04,
+              55.800000000000004
+            ],
+            [
+              -3.34,
+              55.800000000000004
+            ],
+            [
+              -3.34,
+              56.1
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "EH",
+        "area": "Edinburgh",
+        "region": "Scotland",
+        "country": "Scotland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.22999999999999998,
+              51.8
+            ],
+            [
+              0.06999999999999999,
+              51.8
+            ],
+            [
+              0.06999999999999999,
+              51.5
+            ],
+            [
+              -0.22999999999999998,
+              51.5
+            ],
+            [
+              -0.22999999999999998,
+              51.8
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "EN",
+        "area": "Enfield",
+        "region": "London",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.6799999999999997,
+              50.87
+            ],
+            [
+              -3.38,
+              50.87
+            ],
+            [
+              -3.38,
+              50.57
+            ],
+            [
+              -3.6799999999999997,
+              50.57
+            ],
+            [
+              -3.6799999999999997,
+              50.87
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "EX",
+        "area": "Exeter",
+        "region": "South West England",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.9299999999999997,
+              56.15
+            ],
+            [
+              -3.63,
+              56.15
+            ],
+            [
+              -3.63,
+              55.85
+            ],
+            [
+              -3.9299999999999997,
+              55.85
+            ],
+            [
+              -3.9299999999999997,
+              56.15
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "FK",
+        "area": "Falkirk",
+        "region": "Scotland",
+        "country": "Scotland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.1999999999999997,
+              53.97
+            ],
+            [
+              -2.9,
+              53.97
+            ],
+            [
+              -2.9,
+              53.67
+            ],
+            [
+              -3.1999999999999997,
+              53.67
+            ],
+            [
+              -3.1999999999999997,
+              53.97
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "FY",
+        "area": "Blackpool",
+        "region": "North West England",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -4.4,
+              56.01
+            ],
+            [
+              -4.1,
+              56.01
+            ],
+            [
+              -4.1,
+              55.71
+            ],
+            [
+              -4.4,
+              55.71
+            ],
+            [
+              -4.4,
+              56.01
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "G",
+        "area": "Glasgow",
+        "region": "Scotland",
+        "country": "Scotland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -2.39,
+              52.01
+            ],
+            [
+              -2.0900000000000003,
+              52.01
+            ],
+            [
+              -2.0900000000000003,
+              51.71
+            ],
+            [
+              -2.39,
+              51.71
+            ],
+            [
+              -2.39,
+              52.01
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "GL",
+        "area": "Gloucester",
+        "region": "South West England",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.72,
+              51.39
+            ],
+            [
+              -0.41999999999999993,
+              51.39
+            ],
+            [
+              -0.41999999999999993,
+              51.09
+            ],
+            [
+              -0.72,
+              51.09
+            ],
+            [
+              -0.72,
+              51.39
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "GU",
+        "area": "Guildford",
+        "region": "South East England",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -2.7399999999999998,
+              49.61
+            ],
+            [
+              -2.44,
+              49.61
+            ],
+            [
+              -2.44,
+              49.31
+            ],
+            [
+              -2.7399999999999998,
+              49.31
+            ],
+            [
+              -2.7399999999999998,
+              49.61
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "GY",
+        "area": "Guernsey",
+        "region": "Channel Islands",
+        "country": "Guernsey"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.49,
+              51.73
+            ],
+            [
+              -0.19000000000000003,
+              51.73
+            ],
+            [
+              -0.19000000000000003,
+              51.43
+            ],
+            [
+              -0.49,
+              51.43
+            ],
+            [
+              -0.49,
+              51.73
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "HA",
+        "area": "Harrow",
+        "region": "London",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -1.93,
+              53.8
+            ],
+            [
+              -1.6300000000000001,
+              53.8
+            ],
+            [
+              -1.6300000000000001,
+              53.5
+            ],
+            [
+              -1.93,
+              53.5
+            ],
+            [
+              -1.93,
+              53.8
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "HD",
+        "area": "Huddersfield",
+        "region": "Yorkshire and the Humber",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -1.69,
+              54.15
+            ],
+            [
+              -1.3900000000000001,
+              54.15
+            ],
+            [
+              -1.3900000000000001,
+              53.85
+            ],
+            [
+              -1.69,
+              53.85
+            ],
+            [
+              -1.69,
+              54.15
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "HG",
+        "area": "Harrogate",
+        "region": "Yorkshire and the Humber",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.62,
+              51.9
+            ],
+            [
+              -0.31999999999999995,
+              51.9
+            ],
+            [
+              -0.31999999999999995,
+              51.6
+            ],
+            [
+              -0.62,
+              51.6
+            ],
+            [
+              -0.62,
+              51.9
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "HP",
+        "area": "Hemel Hempstead",
+        "region": "East of England",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -2.86,
+              52.21
+            ],
+            [
+              -2.56,
+              52.21
+            ],
+            [
+              -2.56,
+              51.910000000000004
+            ],
+            [
+              -2.86,
+              51.910000000000004
+            ],
+            [
+              -2.86,
+              52.21
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "HR",
+        "area": "Hereford",
+        "region": "West Midlands",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -7.15,
+              57.75
+            ],
+            [
+              -6.85,
+              57.75
+            ],
+            [
+              -6.85,
+              57.45
+            ],
+            [
+              -7.15,
+              57.45
+            ],
+            [
+              -7.15,
+              57.75
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "HS",
+        "area": "Outer Hebrides",
+        "region": "Scotland",
+        "country": "Scotland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.49,
+              53.89
+            ],
+            [
+              -0.19000000000000003,
+              53.89
+            ],
+            [
+              -0.19000000000000003,
+              53.59
+            ],
+            [
+              -0.49,
+              53.59
+            ],
+            [
+              -0.49,
+              53.89
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "HU",
+        "area": "Hull",
+        "region": "Yorkshire and the Humber",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -2.0100000000000002,
+              53.87
+            ],
+            [
+              -1.7100000000000002,
+              53.87
+            ],
+            [
+              -1.7100000000000002,
+              53.57
+            ],
+            [
+              -2.0100000000000002,
+              53.57
+            ],
+            [
+              -2.0100000000000002,
+              53.87
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "HX",
+        "area": "Halifax",
+        "region": "Yorkshire and the Humber",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.06999999999999999,
+              51.71
+            ],
+            [
+              0.22999999999999998,
+              51.71
+            ],
+            [
+              0.22999999999999998,
+              51.410000000000004
+            ],
+            [
+              -0.06999999999999999,
+              51.410000000000004
+            ],
+            [
+              -0.06999999999999999,
+              51.71
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "IG",
+        "area": "Ilford",
+        "region": "London",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -4.7,
+              54.39
+            ],
+            [
+              -4.3999999999999995,
+              54.39
+            ],
+            [
+              -4.3999999999999995,
+              54.09
+            ],
+            [
+              -4.7,
+              54.09
+            ],
+            [
+              -4.7,
+              54.39
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "IM",
+        "area": "Isle of Man",
+        "region": "Isle of Man",
+        "country": "Isle of Man"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1.01,
+              52.21
+            ],
+            [
+              1.3099999999999998,
+              52.21
+            ],
+            [
+              1.3099999999999998,
+              51.910000000000004
+            ],
+            [
+              1.01,
+              51.910000000000004
+            ],
+            [
+              1.01,
+              52.21
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "IP",
+        "area": "Ipswich",
+        "region": "East of England",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -4.37,
+              57.629999999999995
+            ],
+            [
+              -4.069999999999999,
+              57.629999999999995
+            ],
+            [
+              -4.069999999999999,
+              57.33
+            ],
+            [
+              -4.37,
+              57.33
+            ],
+            [
+              -4.37,
+              57.629999999999995
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "IV",
+        "area": "Inverness",
+        "region": "Scotland",
+        "country": "Scotland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -2.28,
+              49.36
+            ],
+            [
+              -1.98,
+              49.36
+            ],
+            [
+              -1.98,
+              49.06
+            ],
+            [
+              -2.28,
+              49.06
+            ],
+            [
+              -2.28,
+              49.36
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "JE",
+        "area": "Jersey",
+        "region": "Channel Islands",
+        "country": "Jersey"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -4.65,
+              55.76
+            ],
+            [
+              -4.35,
+              55.76
+            ],
+            [
+              -4.35,
+              55.46
+            ],
+            [
+              -4.65,
+              55.46
+            ],
+            [
+              -4.65,
+              55.76
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "KA",
+        "area": "Kilmarnock",
+        "region": "Scotland",
+        "country": "Scotland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.44999999999999996,
+              51.559999999999995
+            ],
+            [
+              -0.15,
+              51.559999999999995
+            ],
+            [
+              -0.15,
+              51.26
+            ],
+            [
+              -0.44999999999999996,
+              51.26
+            ],
+            [
+              -0.44999999999999996,
+              51.559999999999995
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "KT",
+        "area": "Kingston upon Thames",
+        "region": "London",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.11,
+              59.129999999999995
+            ],
+            [
+              -2.81,
+              59.129999999999995
+            ],
+            [
+              -2.81,
+              58.83
+            ],
+            [
+              -3.11,
+              58.83
+            ],
+            [
+              -3.11,
+              59.129999999999995
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "KW",
+        "area": "Kirkwall",
+        "region": "Scotland",
+        "country": "Scotland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.31,
+              56.26
+            ],
+            [
+              -3.0100000000000002,
+              56.26
+            ],
+            [
+              -3.0100000000000002,
+              55.96
+            ],
+            [
+              -3.31,
+              55.96
+            ],
+            [
+              -3.31,
+              56.26
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "KY",
+        "area": "Kirkcaldy",
+        "region": "Scotland",
+        "country": "Scotland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.13,
+              53.559999999999995
+            ],
+            [
+              -2.83,
+              53.559999999999995
+            ],
+            [
+              -2.83,
+              53.26
+            ],
+            [
+              -3.13,
+              53.26
+            ],
+            [
+              -3.13,
+              53.559999999999995
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "L",
+        "area": "Liverpool",
+        "region": "North West England",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -2.9499999999999997,
+              54.199999999999996
+            ],
+            [
+              -2.65,
+              54.199999999999996
+            ],
+            [
+              -2.65,
+              53.9
+            ],
+            [
+              -2.9499999999999997,
+              53.9
+            ],
+            [
+              -2.9499999999999997,
+              54.199999999999996
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "LA",
+        "area": "Lancaster",
+        "region": "North West England",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.53,
+              52.39
+            ],
+            [
+              -3.23,
+              52.39
+            ],
+            [
+              -3.23,
+              52.09
+            ],
+            [
+              -3.53,
+              52.09
+            ],
+            [
+              -3.53,
+              52.39
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "LD",
+        "area": "Llandrindod Wells",
+        "region": "Wales",
+        "country": "Wales"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -1.2799999999999998,
+              52.79
+            ],
+            [
+              -0.9799999999999999,
+              52.79
+            ],
+            [
+              -0.9799999999999999,
+              52.49
+            ],
+            [
+              -1.2799999999999998,
+              52.49
+            ],
+            [
+              -1.2799999999999998,
+              52.79
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "LE",
+        "area": "Leicester",
+        "region": "East Midlands",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.98,
+              53.47
+            ],
+            [
+              -3.68,
+              53.47
+            ],
+            [
+              -3.68,
+              53.17
+            ],
+            [
+              -3.98,
+              53.17
+            ],
+            [
+              -3.98,
+              53.47
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "LL",
+        "area": "Llandudno",
+        "region": "Wales",
+        "country": "Wales"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.6900000000000001,
+              53.379999999999995
+            ],
+            [
+              -0.39,
+              53.379999999999995
+            ],
+            [
+              -0.39,
+              53.08
+            ],
+            [
+              -0.6900000000000001,
+              53.08
+            ],
+            [
+              -0.6900000000000001,
+              53.379999999999995
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "LN",
+        "area": "Lincoln",
+        "region": "East Midlands",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -1.7,
+              53.949999999999996
+            ],
+            [
+              -1.4000000000000001,
+              53.949999999999996
+            ],
+            [
+              -1.4000000000000001,
+              53.65
+            ],
+            [
+              -1.7,
+              53.65
+            ],
+            [
+              -1.7,
+              53.949999999999996
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "LS",
+        "area": "Leeds",
+        "region": "Yorkshire and the Humber",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.57,
+              52.03
+            ],
+            [
+              -0.27,
+              52.03
+            ],
+            [
+              -0.27,
+              51.730000000000004
+            ],
+            [
+              -0.57,
+              51.730000000000004
+            ],
+            [
+              -0.57,
+              52.03
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "LU",
+        "area": "Luton",
+        "region": "East of England",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -2.39,
+              53.629999999999995
+            ],
+            [
+              -2.0900000000000003,
+              53.629999999999995
+            ],
+            [
+              -2.0900000000000003,
+              53.33
+            ],
+            [
+              -2.39,
+              53.33
+            ],
+            [
+              -2.39,
+              53.629999999999995
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "M",
+        "area": "Manchester",
+        "region": "North West England",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0.37,
+              51.54
+            ],
+            [
+              0.67,
+              51.54
+            ],
+            [
+              0.67,
+              51.24
+            ],
+            [
+              0.37,
+              51.24
+            ],
+            [
+              0.37,
+              51.54
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "ME",
+        "area": "Medway",
+        "region": "South East England",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.91,
+              52.19
+            ],
+            [
+              -0.61,
+              52.19
+            ],
+            [
+              -0.61,
+              51.89
+            ],
+            [
+              -0.91,
+              51.89
+            ],
+            [
+              -0.91,
+              52.19
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "MK",
+        "area": "Milton Keynes",
+        "region": "South East England",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -4.140000000000001,
+              55.94
+            ],
+            [
+              -3.8400000000000003,
+              55.94
+            ],
+            [
+              -3.8400000000000003,
+              55.64
+            ],
+            [
+              -4.140000000000001,
+              55.64
+            ],
+            [
+              -4.140000000000001,
+              55.94
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "ML",
+        "area": "Motherwell",
+        "region": "Scotland",
+        "country": "Scotland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.26,
+              51.71
+            ],
+            [
+              0.039999999999999994,
+              51.71
+            ],
+            [
+              0.039999999999999994,
+              51.410000000000004
+            ],
+            [
+              -0.26,
+              51.410000000000004
+            ],
+            [
+              -0.26,
+              51.71
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "N",
+        "area": "North London",
+        "region": "London",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -1.77,
+              55.129999999999995
+            ],
+            [
+              -1.4700000000000002,
+              55.129999999999995
+            ],
+            [
+              -1.4700000000000002,
+              54.83
+            ],
+            [
+              -1.77,
+              54.83
+            ],
+            [
+              -1.77,
+              55.129999999999995
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "NE",
+        "area": "Newcastle upon Tyne",
+        "region": "North East England",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -1.2999999999999998,
+              53.1
+            ],
+            [
+              -0.9999999999999999,
+              53.1
+            ],
+            [
+              -0.9999999999999999,
+              52.800000000000004
+            ],
+            [
+              -1.2999999999999998,
+              52.800000000000004
+            ],
+            [
+              -1.2999999999999998,
+              53.1
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "NG",
+        "area": "Nottingham",
+        "region": "East Midlands",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -1.04,
+              52.39
+            ],
+            [
+              -0.74,
+              52.39
+            ],
+            [
+              -0.74,
+              52.09
+            ],
+            [
+              -1.04,
+              52.09
+            ],
+            [
+              -1.04,
+              52.39
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "NN",
+        "area": "Northampton",
+        "region": "East Midlands",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.14,
+              51.74
+            ],
+            [
+              -2.8400000000000003,
+              51.74
+            ],
+            [
+              -2.8400000000000003,
+              51.440000000000005
+            ],
+            [
+              -3.14,
+              51.440000000000005
+            ],
+            [
+              -3.14,
+              51.74
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "NP",
+        "area": "Newport",
+        "region": "Wales",
+        "country": "Wales"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1.1500000000000001,
+              52.78
+            ],
+            [
+              1.45,
+              52.78
+            ],
+            [
+              1.45,
+              52.480000000000004
+            ],
+            [
+              1.1500000000000001,
+              52.480000000000004
+            ],
+            [
+              1.1500000000000001,
+              52.78
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "NR",
+        "area": "Norwich",
+        "region": "East of England",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.35,
+              51.71
+            ],
+            [
+              -0.05000000000000002,
+              51.71
+            ],
+            [
+              -0.05000000000000002,
+              51.410000000000004
+            ],
+            [
+              -0.35,
+              51.410000000000004
+            ],
+            [
+              -0.35,
+              51.71
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "NW",
+        "area": "North West London",
+        "region": "London",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -2.26,
+              53.69
+            ],
+            [
+              -1.96,
+              53.69
+            ],
+            [
+              -1.96,
+              53.39
+            ],
+            [
+              -2.26,
+              53.39
+            ],
+            [
+              -2.26,
+              53.69
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "OL",
+        "area": "Oldham",
+        "region": "North West England",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -1.41,
+              51.9
+            ],
+            [
+              -1.11,
+              51.9
+            ],
+            [
+              -1.11,
+              51.6
+            ],
+            [
+              -1.41,
+              51.6
+            ],
+            [
+              -1.41,
+              51.9
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "OX",
+        "area": "Oxford",
+        "region": "South East England",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -4.58,
+              56.0
+            ],
+            [
+              -4.279999999999999,
+              56.0
+            ],
+            [
+              -4.279999999999999,
+              55.7
+            ],
+            [
+              -4.58,
+              55.7
+            ],
+            [
+              -4.58,
+              56.0
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "PA",
+        "area": "Paisley",
+        "region": "Scotland",
+        "country": "Scotland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.39,
+              52.72
+            ],
+            [
+              -0.09,
+              52.72
+            ],
+            [
+              -0.09,
+              52.42
+            ],
+            [
+              -0.39,
+              52.42
+            ],
+            [
+              -0.39,
+              52.72
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "PE",
+        "area": "Peterborough",
+        "region": "East of England",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.59,
+              56.55
+            ],
+            [
+              -3.29,
+              56.55
+            ],
+            [
+              -3.29,
+              56.25
+            ],
+            [
+              -3.59,
+              56.25
+            ],
+            [
+              -3.59,
+              56.55
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "PH",
+        "area": "Perth",
+        "region": "Scotland",
+        "country": "Scotland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -4.29,
+              50.519999999999996
+            ],
+            [
+              -3.9899999999999998,
+              50.519999999999996
+            ],
+            [
+              -3.9899999999999998,
+              50.22
+            ],
+            [
+              -4.29,
+              50.22
+            ],
+            [
+              -4.29,
+              50.519999999999996
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "PL",
+        "area": "Plymouth",
+        "region": "South West England",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -1.24,
+              50.97
+            ],
+            [
+              -0.9400000000000001,
+              50.97
+            ],
+            [
+              -0.9400000000000001,
+              50.67
+            ],
+            [
+              -1.24,
+              50.67
+            ],
+            [
+              -1.24,
+              50.97
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "PO",
+        "area": "Portsmouth",
+        "region": "South East England",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -2.85,
+              53.91
+            ],
+            [
+              -2.5500000000000003,
+              53.91
+            ],
+            [
+              -2.5500000000000003,
+              53.61
+            ],
+            [
+              -2.85,
+              53.61
+            ],
+            [
+              -2.85,
+              53.91
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "PR",
+        "area": "Preston",
+        "region": "North West England",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -1.1199999999999999,
+              51.6
+            ],
+            [
+              -0.82,
+              51.6
+            ],
+            [
+              -0.82,
+              51.300000000000004
+            ],
+            [
+              -1.1199999999999999,
+              51.300000000000004
+            ],
+            [
+              -1.1199999999999999,
+              51.6
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "RG",
+        "area": "Reading",
+        "region": "South East England",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.32,
+              51.39
+            ],
+            [
+              -0.020000000000000018,
+              51.39
+            ],
+            [
+              -0.020000000000000018,
+              51.09
+            ],
+            [
+              -0.32,
+              51.09
+            ],
+            [
+              -0.32,
+              51.39
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "RH",
+        "area": "Redhill",
+        "region": "South East England",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0.03,
+              51.73
+            ],
+            [
+              0.32999999999999996,
+              51.73
+            ],
+            [
+              0.32999999999999996,
+              51.43
+            ],
+            [
+              0.03,
+              51.43
+            ],
+            [
+              0.03,
+              51.73
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "RM",
+        "area": "Romford",
+        "region": "London",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -1.6199999999999999,
+              53.53
+            ],
+            [
+              -1.32,
+              53.53
+            ],
+            [
+              -1.32,
+              53.230000000000004
+            ],
+            [
+              -1.6199999999999999,
+              53.230000000000004
+            ],
+            [
+              -1.6199999999999999,
+              53.53
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "S",
+        "area": "Sheffield",
+        "region": "Yorkshire and the Humber",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -4.09,
+              51.769999999999996
+            ],
+            [
+              -3.79,
+              51.769999999999996
+            ],
+            [
+              -3.79,
+              51.47
+            ],
+            [
+              -4.09,
+              51.47
+            ],
+            [
+              -4.09,
+              51.769999999999996
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "SA",
+        "area": "Swansea",
+        "region": "Wales",
+        "country": "Wales"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.15,
+              51.61
+            ],
+            [
+              0.15,
+              51.61
+            ],
+            [
+              0.15,
+              51.31
+            ],
+            [
+              -0.15,
+              51.31
+            ],
+            [
+              -0.15,
+              51.61
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "SE",
+        "area": "South East London",
+        "region": "London",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.35,
+              52.05
+            ],
+            [
+              -0.05000000000000002,
+              52.05
+            ],
+            [
+              -0.05000000000000002,
+              51.75
+            ],
+            [
+              -0.35,
+              51.75
+            ],
+            [
+              -0.35,
+              52.05
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "SG",
+        "area": "Stevenage",
+        "region": "East of England",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -2.31,
+              53.559999999999995
+            ],
+            [
+              -2.0100000000000002,
+              53.559999999999995
+            ],
+            [
+              -2.0100000000000002,
+              53.26
+            ],
+            [
+              -2.31,
+              53.26
+            ],
+            [
+              -2.31,
+              53.559999999999995
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "SK",
+        "area": "Stockport",
+        "region": "North West England",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.75,
+              51.66
+            ],
+            [
+              -0.44999999999999996,
+              51.66
+            ],
+            [
+              -0.44999999999999996,
+              51.36
+            ],
+            [
+              -0.75,
+              51.36
+            ],
+            [
+              -0.75,
+              51.66
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "SL",
+        "area": "Slough",
+        "region": "South East England",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.33999999999999997,
+              51.51
+            ],
+            [
+              -0.04000000000000001,
+              51.51
+            ],
+            [
+              -0.04000000000000001,
+              51.21
+            ],
+            [
+              -0.33999999999999997,
+              51.21
+            ],
+            [
+              -0.33999999999999997,
+              51.51
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "SM",
+        "area": "Sutton",
+        "region": "London",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -1.93,
+              51.71
+            ],
+            [
+              -1.6300000000000001,
+              51.71
+            ],
+            [
+              -1.6300000000000001,
+              51.410000000000004
+            ],
+            [
+              -1.93,
+              51.410000000000004
+            ],
+            [
+              -1.93,
+              51.71
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "SN",
+        "area": "Swindon",
+        "region": "South West England",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -1.5499999999999998,
+              51.059999999999995
+            ],
+            [
+              -1.25,
+              51.059999999999995
+            ],
+            [
+              -1.25,
+              50.76
+            ],
+            [
+              -1.5499999999999998,
+              50.76
+            ],
+            [
+              -1.5499999999999998,
+              51.059999999999995
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "SO",
+        "area": "Southampton",
+        "region": "South East England",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -1.94,
+              51.22
+            ],
+            [
+              -1.6400000000000001,
+              51.22
+            ],
+            [
+              -1.6400000000000001,
+              50.92
+            ],
+            [
+              -1.94,
+              50.92
+            ],
+            [
+              -1.94,
+              51.22
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "SP",
+        "area": "Salisbury",
+        "region": "South West England",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -1.5299999999999998,
+              55.059999999999995
+            ],
+            [
+              -1.23,
+              55.059999999999995
+            ],
+            [
+              -1.23,
+              54.76
+            ],
+            [
+              -1.5299999999999998,
+              54.76
+            ],
+            [
+              -1.5299999999999998,
+              55.059999999999995
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "SR",
+        "area": "Sunderland",
+        "region": "North East England",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0.5599999999999999,
+              51.699999999999996
+            ],
+            [
+              0.86,
+              51.699999999999996
+            ],
+            [
+              0.86,
+              51.4
+            ],
+            [
+              0.5599999999999999,
+              51.4
+            ],
+            [
+              0.5599999999999999,
+              51.699999999999996
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "SS",
+        "area": "Southend-on-Sea",
+        "region": "East of England",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -2.33,
+              53.15
+            ],
+            [
+              -2.0300000000000002,
+              53.15
+            ],
+            [
+              -2.0300000000000002,
+              52.85
+            ],
+            [
+              -2.33,
+              52.85
+            ],
+            [
+              -2.33,
+              53.15
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "ST",
+        "area": "Stoke-on-Trent",
+        "region": "West Midlands",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.32999999999999996,
+              51.61
+            ],
+            [
+              -0.03,
+              51.61
+            ],
+            [
+              -0.03,
+              51.31
+            ],
+            [
+              -0.32999999999999996,
+              51.31
+            ],
+            [
+              -0.32999999999999996,
+              51.61
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "SW",
+        "area": "South West London",
+        "region": "London",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -2.9,
+              52.86
+            ],
+            [
+              -2.6,
+              52.86
+            ],
+            [
+              -2.6,
+              52.56
+            ],
+            [
+              -2.9,
+              52.56
+            ],
+            [
+              -2.9,
+              52.86
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "SY",
+        "area": "Shrewsbury",
+        "region": "West Midlands",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.26,
+              51.16
+            ],
+            [
+              -2.96,
+              51.16
+            ],
+            [
+              -2.96,
+              50.86
+            ],
+            [
+              -3.26,
+              50.86
+            ],
+            [
+              -3.26,
+              51.16
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "TA",
+        "area": "Taunton",
+        "region": "South West England",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -2.96,
+              55.769999999999996
+            ],
+            [
+              -2.66,
+              55.769999999999996
+            ],
+            [
+              -2.66,
+              55.47
+            ],
+            [
+              -2.96,
+              55.47
+            ],
+            [
+              -2.96,
+              55.769999999999996
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "TD",
+        "area": "Galashiels",
+        "region": "Scotland",
+        "country": "Scotland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -2.6,
+              52.83
+            ],
+            [
+              -2.3000000000000003,
+              52.83
+            ],
+            [
+              -2.3000000000000003,
+              52.53
+            ],
+            [
+              -2.6,
+              52.53
+            ],
+            [
+              -2.6,
+              52.83
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "TF",
+        "area": "Telford",
+        "region": "West Midlands",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0.12000000000000002,
+              51.35
+            ],
+            [
+              0.42000000000000004,
+              51.35
+            ],
+            [
+              0.42000000000000004,
+              51.050000000000004
+            ],
+            [
+              0.12000000000000002,
+              51.050000000000004
+            ],
+            [
+              0.12000000000000002,
+              51.35
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "TN",
+        "area": "Tonbridge",
+        "region": "South East England",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.6799999999999997,
+              50.61
+            ],
+            [
+              -3.38,
+              50.61
+            ],
+            [
+              -3.38,
+              50.31
+            ],
+            [
+              -3.6799999999999997,
+              50.31
+            ],
+            [
+              -3.6799999999999997,
+              50.61
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "TQ",
+        "area": "Torquay",
+        "region": "South West England",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -5.2,
+              50.41
+            ],
+            [
+              -4.8999999999999995,
+              50.41
+            ],
+            [
+              -4.8999999999999995,
+              50.11
+            ],
+            [
+              -5.2,
+              50.11
+            ],
+            [
+              -5.2,
+              50.41
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "TR",
+        "area": "Truro",
+        "region": "South West England",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -1.39,
+              54.72
+            ],
+            [
+              -1.09,
+              54.72
+            ],
+            [
+              -1.09,
+              54.42
+            ],
+            [
+              -1.39,
+              54.42
+            ],
+            [
+              -1.39,
+              54.72
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "TS",
+        "area": "Cleveland",
+        "region": "North East England",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.48,
+              51.6
+            ],
+            [
+              -0.18000000000000002,
+              51.6
+            ],
+            [
+              -0.18000000000000002,
+              51.300000000000004
+            ],
+            [
+              -0.48,
+              51.300000000000004
+            ],
+            [
+              -0.48,
+              51.6
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "TW",
+        "area": "Twickenham",
+        "region": "London",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.63,
+              51.69
+            ],
+            [
+              -0.32999999999999996,
+              51.69
+            ],
+            [
+              -0.32999999999999996,
+              51.39
+            ],
+            [
+              -0.63,
+              51.39
+            ],
+            [
+              -0.63,
+              51.69
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "UB",
+        "area": "Uxbridge",
+        "region": "London",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.36,
+              51.66
+            ],
+            [
+              -0.06,
+              51.66
+            ],
+            [
+              -0.06,
+              51.36
+            ],
+            [
+              -0.36,
+              51.36
+            ],
+            [
+              -0.36,
+              51.66
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "W",
+        "area": "West London",
+        "region": "London",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -2.75,
+              53.54
+            ],
+            [
+              -2.45,
+              53.54
+            ],
+            [
+              -2.45,
+              53.24
+            ],
+            [
+              -2.75,
+              53.24
+            ],
+            [
+              -2.75,
+              53.54
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "WA",
+        "area": "Warrington",
+        "region": "North West England",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.27,
+              51.67
+            ],
+            [
+              0.03,
+              51.67
+            ],
+            [
+              0.03,
+              51.370000000000005
+            ],
+            [
+              -0.27,
+              51.370000000000005
+            ],
+            [
+              -0.27,
+              51.67
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "WC",
+        "area": "West Central London",
+        "region": "London",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.55,
+              51.809999999999995
+            ],
+            [
+              -0.25,
+              51.809999999999995
+            ],
+            [
+              -0.25,
+              51.51
+            ],
+            [
+              -0.55,
+              51.51
+            ],
+            [
+              -0.55,
+              51.809999999999995
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "WD",
+        "area": "Watford",
+        "region": "East of England",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -1.65,
+              53.83
+            ],
+            [
+              -1.35,
+              53.83
+            ],
+            [
+              -1.35,
+              53.53
+            ],
+            [
+              -1.65,
+              53.53
+            ],
+            [
+              -1.65,
+              53.83
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "WF",
+        "area": "Wakefield",
+        "region": "Yorkshire and the Humber",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -2.78,
+              53.699999999999996
+            ],
+            [
+              -2.48,
+              53.699999999999996
+            ],
+            [
+              -2.48,
+              53.4
+            ],
+            [
+              -2.78,
+              53.4
+            ],
+            [
+              -2.78,
+              53.699999999999996
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "WN",
+        "area": "Wigan",
+        "region": "North West England",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -2.37,
+              52.339999999999996
+            ],
+            [
+              -2.0700000000000003,
+              52.339999999999996
+            ],
+            [
+              -2.0700000000000003,
+              52.04
+            ],
+            [
+              -2.37,
+              52.04
+            ],
+            [
+              -2.37,
+              52.339999999999996
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "WR",
+        "area": "Worcester",
+        "region": "West Midlands",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -2.13,
+              52.74
+            ],
+            [
+              -1.83,
+              52.74
+            ],
+            [
+              -1.83,
+              52.440000000000005
+            ],
+            [
+              -2.13,
+              52.440000000000005
+            ],
+            [
+              -2.13,
+              52.74
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "WS",
+        "area": "Walsall",
+        "region": "West Midlands",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -2.28,
+              52.74
+            ],
+            [
+              -1.98,
+              52.74
+            ],
+            [
+              -1.98,
+              52.440000000000005
+            ],
+            [
+              -2.28,
+              52.440000000000005
+            ],
+            [
+              -2.28,
+              52.74
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "WV",
+        "area": "Wolverhampton",
+        "region": "West Midlands",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -1.23,
+              54.11
+            ],
+            [
+              -0.93,
+              54.11
+            ],
+            [
+              -0.93,
+              53.81
+            ],
+            [
+              -1.23,
+              53.81
+            ],
+            [
+              -1.23,
+              54.11
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "YO",
+        "area": "York",
+        "region": "Yorkshire and the Humber",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -1.2999999999999998,
+              60.67
+            ],
+            [
+              -0.9999999999999999,
+              60.67
+            ],
+            [
+              -0.9999999999999999,
+              60.370000000000005
+            ],
+            [
+              -1.2999999999999998,
+              60.370000000000005
+            ],
+            [
+              -1.2999999999999998,
+              60.67
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "ZE",
+        "area": "Shetland",
+        "region": "Scotland",
+        "country": "Scotland"
+      }
+    }
+  ]
+}
