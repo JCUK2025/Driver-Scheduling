@@ -4,27 +4,39 @@
 
 The Driver Scheduling app has been prepared for GitHub Pages deployment in the `docs/` folder.
 
-## 📋 Configuration Steps
+## 📋 Automated Deployment
 
-To enable GitHub Pages and make your app live at `https://jcuk2025.github.io/Driver-Scheduling/`:
+The repository now includes a **GitHub Actions workflow** (`.github/workflows/deploy-pages.yml`) that automatically deploys the app to GitHub Pages whenever changes are pushed to the `main` branch.
 
-### 1. Navigate to Repository Settings
-- Go to your repository: https://github.com/JCUK2025/Driver-Scheduling
-- Click on **Settings** (top menu)
+### What Happens Automatically:
+- ✅ On every push to `main`, the workflow builds and deploys the app
+- ✅ The `docs/` folder contents are uploaded to GitHub Pages
+- ✅ Your app becomes accessible at: `https://jcuk2025.github.io/Driver-Scheduling/`
 
-### 2. Configure GitHub Pages
-- In the left sidebar, click **Pages** (under "Code and automation")
+### One-Time Setup Required:
+
+If this is the first deployment, you need to enable GitHub Pages in repository settings:
+
+1. **Navigate to Repository Settings**
+   - Go to: https://github.com/JCUK2025/Driver-Scheduling/settings
+   - Click on **Settings** in the top menu
+
+2. **Enable GitHub Pages**
+   - In the left sidebar, click **Pages** (under "Code and automation")
+   - Under **Source**, select **"GitHub Actions"** (recommended)
+   - Click **Save**
+
+3. **Wait for Deployment**
+   - The workflow will automatically run on the next push to `main`
+   - Check the **Actions** tab to monitor deployment progress
+   - Deployment typically takes 1-2 minutes
+   - Once complete, your app will be live at: `https://jcuk2025.github.io/Driver-Scheduling/`
+
+### Alternative Setup (Legacy Method):
+If you prefer manual deployment without Actions:
 - Under **Source**, select "Deploy from a branch"
-- Under **Branch**:
-  - Select `main` (or your default branch)
-  - Select `/docs` from the folder dropdown
-  - Click **Save**
-
-### 3. Wait for Deployment
-- GitHub will automatically deploy your site
-- It typically takes 1-5 minutes
-- You'll see a green checkmark when it's ready
-- The URL will be: `https://jcuk2025.github.io/Driver-Scheduling/`
+- Select `main` branch and `/docs` folder
+- Click **Save**
 
 ## ✅ What's Included
 
