@@ -79,15 +79,12 @@ PORT=5000
 
 ## 🎯 Running the Application
 
-### Development Mode
+### Start the Server
 ```bash
 npm start
 ```
 
-This will:
-1. Build the React frontend with Webpack
-2. Start the Express backend server
-3. Open the application at `http://localhost:5000`
+This will start the Express backend server on port 5000.
 
 ### Access the Application
 Open your browser and navigate to:
@@ -95,36 +92,29 @@ Open your browser and navigate to:
 http://localhost:5000
 ```
 
+You will immediately see:
+- ✅ Interactive UK map with 44 postcode markers
+- ✅ Clickable postcodes that highlight in red when selected
+- ✅ Sidebar with delivery area creation form
+- ✅ List of created delivery areas
+- ✅ All functionality working with no additional setup required
+
 ## 📁 Project Structure
 
 ```
 Driver-Scheduling/
 ├── public/
-│   ├── index.html          # HTML entry point
-│   └── bundle.js           # Built React application (generated)
+│   └── index.html          # Complete single-page application with embedded data
 ├── src/
-│   ├── components/
-│   │   ├── PostcodeMap.jsx           # Interactive map component
-│   │   ├── PostcodeMap.css           # Map styling
-│   │   ├── DeliveryAreaForm.jsx      # Form for creating/editing areas
-│   │   ├── DeliveryAreaForm.css      # Form styling
-│   │   ├── DeliveryAreasManager.jsx  # Main manager component
-│   │   └── DeliveryAreasManager.css  # Manager styling
-│   ├── data/
-│   │   ├── uk-postcodes.geojson      # UK postcode data
-│   │   └── uk-boundaries.geojson     # County/country boundaries
 │   ├── models/
 │   │   └── DeliveryArea.js           # Mongoose schema
 │   ├── controllers/
 │   │   └── deliveryAreaController.js # API controllers
 │   ├── routes/
 │   │   └── deliveryAreaRoutes.js     # API routes
-│   ├── App.jsx              # Main React component
-│   ├── App.css              # App styling
-│   ├── index.js             # React entry point
-│   └── index.css            # Global styling
-├── server.js                # Express server
-├── webpack.config.js        # Webpack configuration
+│   └── utils/
+│       └── inMemoryStore.js          # Fallback storage when MongoDB unavailable
+├── server.js                # Express server with MongoDB integration
 ├── package.json             # Dependencies and scripts
 └── .env.example             # Example environment variables
 ```
@@ -168,23 +158,23 @@ The application provides the following REST API endpoints:
 ## 🛠️ Technology Stack
 
 - **Frontend:**
-  - React 17
-  - Leaflet.js 1.9 (mapping library)
-  - React-Leaflet 3.2
-  - GeoJSON for geographic data
-  - Webpack 5 (bundling)
-  - Babel (transpiling)
+  - Pure HTML5, CSS3, and JavaScript (ES6+)
+  - Leaflet.js 1.9 (interactive mapping library)
+  - 44 UK postcodes embedded with real coordinates
+  - Single-page application (SPA) architecture
+  - No build tools required
 
 - **Backend:**
-  - Node.js
-  - Express.js 4
-  - MongoDB with Mongoose 5
-  - CORS enabled
+  - Node.js with Express.js 4
+  - MongoDB with Mongoose 7 (with in-memory fallback)
+  - RESTful API architecture
+  - CORS enabled for cross-origin requests
 
 - **Map Data:**
   - OpenStreetMap tiles
-  - Custom UK postcode GeoJSON data
-  - UK boundaries GeoJSON data
+  - Embedded UK postcode data (London, Manchester, Birmingham, Leeds, Liverpool, Newcastle, Bristol, Sheffield, Norwich, Edinburgh, Glasgow, Aberdeen, Dundee, Cardiff, Swansea, Belfast, and more)
+  - Real latitude/longitude coordinates
+  - County and country information
 
 ## ⚠️ Troubleshooting
 
@@ -207,7 +197,7 @@ If port 5000 is already in use:
 2. Restart the application
 
 ### Build Errors
-If webpack build fails:
+If you encounter any issues:
 ```bash
 # Clear node_modules and reinstall
 rm -rf node_modules package-lock.json
@@ -215,16 +205,16 @@ npm install
 npm start
 ```
 
+### MongoDB Not Required for Testing
+The application works without MongoDB using an in-memory storage fallback. This allows you to test all features immediately without database setup. Data will not persist between server restarts when using in-memory mode.
+
 ## 📝 Development Scripts
 
 ```bash
-# Build production bundle
-npm run build
+# Start production server
+npm start
 
-# Start server only (without rebuilding)
-npm run server
-
-# Development mode with watch (requires concurrently)
+# Start development server with auto-reload
 npm run dev
 ```
 
