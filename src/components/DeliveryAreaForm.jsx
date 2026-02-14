@@ -193,7 +193,7 @@ const DeliveryAreaForm = ({ onSubmit, onCancel, initialData, mode = 'create' }) 
 
         <div className="form-group">
           <label>
-            Select Postcodes on Map <span className="required">*</span>
+            Select Postcodes on Map or Add Manually <span className="required">*</span>
           </label>
           <PostcodeMap
             selectedPostcodes={formData.postcodes}
@@ -205,7 +205,7 @@ const DeliveryAreaForm = ({ onSubmit, onCancel, initialData, mode = 'create' }) 
 
         <div className="form-group">
           <label htmlFor="postcode-input">
-            Or Add Postcodes Manually
+            Add Postcodes Manually
           </label>
           <div className="postcode-input-group">
             <input
