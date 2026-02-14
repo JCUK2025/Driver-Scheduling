@@ -1,7 +1,15 @@
-import React, { useEffect, useState } from 'react';
-import { MapContainer, TileLayer, Marker, Popup, useMap, ZoomControl } from 'react-leaflet';
+import React, { useState } from 'react';
+import { MapContainer, TileLayer, Marker, Popup, ZoomControl } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
+
+// Fix for default marker icons in webpack
+delete L.Icon.Default.prototype._getIconUrl;
+L.Icon.Default.mergeOptions({
+  iconRetinaUrl: '/leaflet-images/marker-icon-2x.png',
+  iconUrl: '/leaflet-images/marker-icon.png',
+  shadowUrl: '/leaflet-images/marker-shadow.png',
+});
 
 // Replace this with your actual postcode data
 const postcodeData = [
@@ -13,21 +21,6 @@ const postcodeData = [
 const PostcodeMap = () => {
   const [selectedPostcode, setSelectedPostcode] = useState(null);
 
-  useEffect(() => {
-    // Add any necessary Leaflet setup here
-    const customMarker = L.icon({
-      iconUrl: '/path/to/marker-icon.png',
-      iconSize: [25, 41],
-      iconAnchor: [12, 41],
-    });
-
-    // Initialize map if needed
-    const map = useMap();
-    map.setView([55.3781, -3.4360], 6); // Centered over the UK
-
-    // Optional: Load additional layers for borders, etc.
-  }, []);
-
   return (
     <MapContainer center={[55.3781, -3.4360]} zoom={6} style={{ height: '100vh', width: '100%' }} zoomControl={false}>
       <TileLayer
@@ -38,11 +31,6 @@ const PostcodeMap = () => {
         <Marker
           key={postcode.postcode}
           position={[postcode.lat, postcode.lng]}
-          icon={L.icon({
-            iconUrl: '/path/to/marker-icon.png',
-            iconSize: [25, 41],
-            iconAnchor: [12, 41],
-          })}
           eventHandlers={{
             click: () => {
               setSelectedPostcode(postcode.postcode);
