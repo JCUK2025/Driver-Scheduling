@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delivery Areas Management</title>
+    <style>
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+
+        form {
+            margin: 20px 0;
+        }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+</head>
+
+<body>
+    <h1>Delivery Areas Management</h1>
+    <div id="map"></div>
+
+    <form id="deliveryAreaForm">
+        <label for="areaName">Delivery Area Name:</label>
+        <input type="text" id="areaName" required>
+        <label for="latitude">Latitude:</label>
+        <input type="number" id="latitude" required>
+        <label for="longitude">Longitude:</label>
+        <input type="number" id="longitude" required>
+        <button type="submit">Add Delivery Area</button>
+    </form>
+
+    <h2>Saved Delivery Areas:</h2>
+    <ul id="savedAreas"></ul>
+
+    <script>
+        let map;
+        let deliveryAreas = JSON.parse(localStorage.getItem('deliveryAreas')) || [];
+
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: { lat: 0, lng: 0 },
+                zoom: 2
+            });
+
+            deliveryAreas.forEach(area => {
+                addMarker(area.latitude, area.longitude, area.name);
+            });
+        }
+
+        function addMarker(lat, lng, name) {
+            new google.maps.Marker({
+                position: { lat, lng },
+                map,
+                title: name
+            });
+            const li = document.createElement('li');
+            li.textContent = name;
+            document.getElementById('savedAreas').appendChild(li);
+        }
+
+        document.getElementById('deliveryAreaForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            const areaName = document.getElementById('areaName').value;
+            const latitude = parseFloat(document.getElementById('latitude').value);
+            const longitude = parseFloat(document.getElementById('longitude').value);
+
+            const newDeliveryArea = { name: areaName, latitude, longitude };
+            deliveryAreas.push(newDeliveryArea);
+            localStorage.setItem('deliveryAreas', JSON.stringify(deliveryAreas));
+            addMarker(latitude, longitude, areaName);
+            this.reset();
+        });
+    </script>
+</body>
+
+</html>
