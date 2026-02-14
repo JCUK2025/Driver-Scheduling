@@ -1,0 +1,1 @@
+{\n  "type": "FeatureCollection",\n  "features": [\n    {\n      "type": "Feature",\n      "geometry": {\n        "type": "Polygon",\n        "coordinates": [\n          [[-0.128, 51.509], [-0.128, 51.52], [-0.101, 51.52], [-0.101, 51.509], [-0.128, 51.509]]\n        ]\n      },\n      "properties": {\n        "postcode_area": "E"\n      }\n    }\n  ]\n}
