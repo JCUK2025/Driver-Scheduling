@@ -47,9 +47,16 @@ const DeliveryAreaForm = ({ onSubmit, onCancel, initialData, mode = 'create' }) 
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
+    
+    // Convert numeric fields to numbers
+    let processedValue = value;
+    if (name === 'deliveryDays' || name === 'priority') {
+      processedValue = parseInt(value, 10);
+    }
+    
     setFormData(prev => ({
       ...prev,
-      [name]: value
+      [name]: processedValue
     }));
     // Clear error for this field
     if (errors[name]) {
