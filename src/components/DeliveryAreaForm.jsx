@@ -231,8 +231,8 @@ const DeliveryAreaForm = ({ onSubmit, onCancel, initialData, mode = 'create' }) 
             onChange={handleInputChange}
             className={errors.priority ? 'error' : ''}
           >
-            <option value={1}>Priority 1 (5-10 day delivery)</option>
-            <option value={2}>Priority 2 (10-15 day delivery)</option>
+            <option value={1}>Priority 1 (5-10 days delivery)</option>
+            <option value={2}>Priority 2 (10-15 days delivery)</option>
           </select>
           {errors.priority && <span className="error-message">{errors.priority}</span>}
         </div>
