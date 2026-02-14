@@ -1,14 +1,1 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Driver Scheduling - Delivery Areas with Interactive Map</title>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-</head>
-<body>
-  <noscript>You need to enable JavaScript to run this app.</noscript>
-  <div id="root"></div>
-  <script src="/bundle.js"></script>
-</body>
-</html>
+<!DOCTYPE html>\n<html lang="en">\n<head>\n    <meta charset="UTF-8">\n    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n    <title>Driver Scheduling App</title>\n    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />\n    <script src="https://unpkg.com/react/umd/react.development.js"></script>\n    <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>\n    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>\n    <style>\n        #map {\n            height: 400px;\n            width: 100%;\n        }\n    </style>\n</head>\n<body>\n    <div id="root"></div>\n    <script>\n        const { useEffect } = React;\n        const { createRoot } = ReactDOM;\n        const App = () => {\n            useEffect(() => {\n                const map = L.map('map').setView([51.505, -0.09], 13);\n                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {\n                    maxZoom: 19,\n                    attribution: '© OpenStreetMap contributors'\n                }).addTo(map);\n            }, []);\n            return <div id="map"></div>;\n        };\n        createRoot(document.getElementById('root')).render(<App />);\n    <\/script>\n</body>\n</html>
