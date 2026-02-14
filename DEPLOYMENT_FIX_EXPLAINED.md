@@ -51,10 +51,18 @@ steps:
 
 Added a convenience script for manual builds:
 ```json
-"build:pages": "npm run build && cp public/bundle.js docs/bundle.js"
+"build:pages": "npm run build && node scripts/copy-to-docs.js"
 ```
 
-#### 3. **Updated Documentation**
+#### 3. **Custom Copy Script (`scripts/copy-to-docs.js`)**
+
+Created a cross-platform Node.js script that:
+- Copies all webpack build artifacts to the docs folder
+- Distinguishes between required (bundle.js) and optional artifacts (.map, .LICENSE.txt)
+- Provides clear error messages and proper exit codes
+- Works on Windows, macOS, and Linux without external dependencies
+
+#### 4. **Updated Documentation**
 
 - Updated README.md to explain automatic deployment
 - Updated GITHUB_PAGES_SETUP.md with detailed process explanation

@@ -7,16 +7,23 @@
 const fs = require('fs');
 const path = require('path');
 
-const artifacts = ['bundle.js', 'bundle.js.map', 'bundle.js.LICENSE.txt'];
+// Required artifacts (build fails if missing)
+const requiredArtifacts = ['bundle.js'];
+
+// Optional artifacts (warnings only if missing)
+const optionalArtifacts = ['bundle.js.map', 'bundle.js.LICENSE.txt'];
+
 const sourceDir = path.join(__dirname, '..', 'public');
 const targetDir = path.join(__dirname, '..', 'docs');
 
-console.log('📦 Copying build artifacts to docs folder...\n');
+console.log('[COPY] Copying build artifacts to docs folder...\n');
 
 let successCount = 0;
 let failCount = 0;
+let missingRequired = [];
 
-artifacts.forEach(file => {
+// Copy required artifacts
+requiredArtifacts.forEach(file => {
   const sourcePath = path.join(sourceDir, file);
   const targetPath = path.join(targetDir, file);
   
@@ -25,21 +32,51 @@ artifacts.forEach(file => {
       fs.copyFileSync(sourcePath, targetPath);
       const stats = fs.statSync(targetPath);
       const sizeKB = (stats.size / 1024).toFixed(1);
-      console.log(`✅ Copied ${file} (${sizeKB} KB)`);
+      console.log(`[OK] Copied ${file} (${sizeKB} KB)`);
       successCount++;
     } else {
-      console.log(`⚠️  Skipped ${file} (not found)`);
+      console.error(`[ERROR] Required file not found: ${file}`);
+      missingRequired.push(file);
+      failCount++;
     }
   } catch (error) {
-    console.error(`❌ Failed to copy ${file}: ${error.message}`);
+    console.error(`[ERROR] Failed to copy ${file}: ${error.message}`);
     failCount++;
   }
 });
 
-console.log(`\n📊 Summary: ${successCount} copied, ${failCount} failed`);
+// Copy optional artifacts
+optionalArtifacts.forEach(file => {
+  const sourcePath = path.join(sourceDir, file);
+  const targetPath = path.join(targetDir, file);
+  
+  try {
+    if (fs.existsSync(sourcePath)) {
+      fs.copyFileSync(sourcePath, targetPath);
+      const stats = fs.statSync(targetPath);
+      const sizeKB = (stats.size / 1024).toFixed(1);
+      console.log(`[OK] Copied ${file} (${sizeKB} KB)`);
+      successCount++;
+    } else {
+      console.log(`[WARN] Skipped ${file} (not found)`);
+    }
+  } catch (error) {
+    console.error(`[ERROR] Failed to copy ${file}: ${error.message}`);
+    failCount++;
+  }
+});
 
-if (failCount > 0) {
+console.log(`\n[SUMMARY] ${successCount} copied, ${failCount} failed`);
+
+if (missingRequired.length > 0) {
+  console.error(`[ERROR] Missing required files: ${missingRequired.join(', ')}`);
+  console.error('[ERROR] Build artifacts are incomplete. Did you run "npm run build" first?');
   process.exit(1);
 }
 
-console.log('✅ Build artifacts successfully copied to docs folder!\n');
+if (failCount > 0) {
+  console.error('[ERROR] Some files failed to copy. Check errors above.');
+  process.exit(1);
+}
+
+console.log('[OK] Build artifacts successfully copied to docs folder!\n');
