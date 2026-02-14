@@ -38,11 +38,12 @@ jobs:
         run: npm run build
 
       - name: Copy build to docs folder
+        run: npx copyfiles -f public/bundle.* docs/
+        
+      - name: Verify build artifacts
         run: |
-          cp public/bundle.js docs/bundle.js
-          cp public/bundle.js.map docs/bundle.js.map 2>/dev/null || echo "No source map to copy"
-          cp public/bundle.js.LICENSE.txt docs/bundle.js.LICENSE.txt 2>/dev/null || echo "No license file to copy"
-          echo "✅ Build artifacts copied to docs folder for deployment"
+          echo "✅ Build artifacts copied to docs folder:"
+          ls -lh docs/bundle.*
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
