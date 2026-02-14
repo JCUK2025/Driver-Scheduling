@@ -8,7 +8,7 @@ const isMongoConnected = () => mongoose.connection.readyState === 1;
 // Create a new delivery area
 const createDeliveryArea = async (req, res) => {
   try {
-    const { name, colour, postcodes } = req.body;
+    const { name, colour, postcodes, deliveryDays, priority } = req.body;
 
     // Validate required fields
     if (!name || !postcodes || postcodes.length === 0) {
@@ -22,7 +22,9 @@ const createDeliveryArea = async (req, res) => {
       const area = await inMemoryStore.create({
         name,
         colour: colour || '#3498db',
-        postcodes: [...new Set(postcodes.map(pc => pc.toUpperCase()))]
+        postcodes: [...new Set(postcodes.map(pc => pc.toUpperCase()))],
+        deliveryDays: deliveryDays ?? 1,
+        priority: priority ?? 1
       });
       return res.status(201).json(area);
     }
@@ -30,7 +32,9 @@ const createDeliveryArea = async (req, res) => {
     const deliveryArea = new DeliveryArea({
       name,
       colour: colour || '#3498db',
-      postcodes
+      postcodes,
+      deliveryDays: deliveryDays ?? 1,
+      priority: priority ?? 1
     });
 
     const savedArea = await deliveryArea.save();
@@ -84,7 +88,7 @@ const getDeliveryAreaById = async (req, res) => {
 // Update a delivery area
 const updateDeliveryArea = async (req, res) => {
   try {
-    const { name, colour, postcodes } = req.body;
+    const { name, colour, postcodes, deliveryDays, priority } = req.body;
 
     // Validate required fields
     if (!name || !postcodes || postcodes.length === 0) {
@@ -98,7 +102,9 @@ const updateDeliveryArea = async (req, res) => {
       const area = await inMemoryStore.update(req.params.id, {
         name,
         colour: colour || '#3498db',
-        postcodes: [...new Set(postcodes.map(pc => pc.toUpperCase()))]
+        postcodes: [...new Set(postcodes.map(pc => pc.toUpperCase()))],
+        deliveryDays: deliveryDays ?? 1,
+        priority: priority ?? 1
       });
       if (!area) {
         return res.status(404).json({ error: 'Delivery area not found' });
@@ -114,6 +120,8 @@ const updateDeliveryArea = async (req, res) => {
     area.name = name;
     area.colour = colour || area.colour;
     area.postcodes = postcodes;
+    area.deliveryDays = deliveryDays ?? area.deliveryDays;
+    area.priority = priority ?? area.priority;
 
     const updatedArea = await area.save();
     res.json(updatedArea);
