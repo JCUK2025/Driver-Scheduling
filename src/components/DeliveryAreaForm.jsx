@@ -30,7 +30,7 @@ const DeliveryAreaForm = ({ onSubmit, onCancel, initialData, mode = 'create' }) 
     }
 
     if (formData.postcodes.length === 0) {
-      newErrors.postcodes = 'At least one postcode is required';
+      newErrors.postcodes = 'At least one postcode area is required';
     }
 
     if (!/^#[0-9A-F]{6}$/i.test(formData.colour)) {
@@ -193,7 +193,7 @@ const DeliveryAreaForm = ({ onSubmit, onCancel, initialData, mode = 'create' }) 
 
         <div className="form-group">
           <label>
-            Select Postcodes on Map or Add Manually <span className="required">*</span>
+            Select Postcode Areas on Map or Add Manually <span className="required">*</span>
           </label>
           <PostcodeMap
             selectedPostcodes={formData.postcodes}
@@ -205,7 +205,7 @@ const DeliveryAreaForm = ({ onSubmit, onCancel, initialData, mode = 'create' }) 
 
         <div className="form-group">
           <label htmlFor="postcode-input">
-            Add Postcodes Manually
+            Add Postcode Areas Manually
           </label>
           <div className="postcode-input-group">
             <input
@@ -214,7 +214,7 @@ const DeliveryAreaForm = ({ onSubmit, onCancel, initialData, mode = 'create' }) 
               value={postcodeInput}
               onChange={(e) => setPostcodeInput(e.target.value)}
               onKeyPress={handlePostcodeKeyPress}
-              placeholder="Enter postcode (e.g., NR1)"
+              placeholder="Enter postcode area (e.g., NR, CO, SW)"
             />
             <button
               type="button"
