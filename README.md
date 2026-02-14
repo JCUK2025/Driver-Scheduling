@@ -2,6 +2,8 @@
 
 A fully functional, production-ready web application for managing delivery areas with an interactive UK postcode map.
 
+> **🚀 Quick Preview:** `npm install && npm start` then open http://localhost:5000
+
 ![Driver Scheduling App](https://github.com/user-attachments/assets/4035306e-eb48-4a9d-8661-4773741882b4)
 
 ## 🚀 Features
@@ -32,10 +34,39 @@ A fully functional, production-ready web application for managing delivery areas
 ## 📋 Requirements
 
 - **Node.js** >= 14.0.0
-- **MongoDB** (local installation or MongoDB Atlas)
 - **npm** or **yarn**
+- **MongoDB** (optional - only required for data persistence)
 
-## 🛠️ Installation
+## ⚡ Quick Start - Preview the App in 3 Steps
+
+Want to preview the app immediately? Follow these simple steps:
+
+### 1. Install Dependencies
+```bash
+npm install
+```
+
+### 2. Start the Application
+```bash
+npm start
+```
+
+### 3. Open in Browser
+Navigate to **http://localhost:5000** in your web browser.
+
+**That's it!** 🎉 The app works immediately with in-memory storage (no MongoDB setup required for testing).
+
+You'll see:
+- ✅ Interactive UK map with 44 postcode markers
+- ✅ Clickable postcodes that highlight when selected
+- ✅ Delivery area creation and management features
+- ✅ Full functionality without any database setup
+
+> **Note:** Data will not persist between server restarts when using in-memory mode. To enable data persistence, [set up MongoDB](#3-set-up-mongodb) following the installation guide below.
+
+---
+
+## 🛠️ Full Installation Guide
 
 ### 1. Clone the repository
 ```bash
