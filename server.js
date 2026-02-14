@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const path = require('path');
 const deliveryAreaRoutes = require('./src/routes/deliveryAreaRoutes');
 
 const app = express();
@@ -7,6 +8,9 @@ const PORT = process.env.PORT || 3000;
 
 // Middleware
 app.use(express.json());
+
+// Serve static files from public directory
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Database Connection
 const DB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/driver-scheduling';
