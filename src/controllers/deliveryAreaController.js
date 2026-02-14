@@ -120,8 +120,8 @@ const updateDeliveryArea = async (req, res) => {
     area.name = name;
     area.colour = colour || area.colour;
     area.postcodes = postcodes;
-    area.deliveryDays = deliveryDays !== undefined ? deliveryDays : area.deliveryDays;
-    area.priority = priority !== undefined ? priority : area.priority;
+    area.deliveryDays = deliveryDays ?? area.deliveryDays;
+    area.priority = priority ?? area.priority;
 
     const updatedArea = await area.save();
     res.json(updatedArea);
