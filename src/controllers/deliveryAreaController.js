@@ -23,8 +23,8 @@ const createDeliveryArea = async (req, res) => {
         name,
         colour: colour || '#3498db',
         postcodes: [...new Set(postcodes.map(pc => pc.toUpperCase()))],
-        deliveryDays: deliveryDays || 1,
-        priority: priority || 1
+        deliveryDays: deliveryDays ?? 1,
+        priority: priority ?? 1
       });
       return res.status(201).json(area);
     }
@@ -33,8 +33,8 @@ const createDeliveryArea = async (req, res) => {
       name,
       colour: colour || '#3498db',
       postcodes,
-      deliveryDays: deliveryDays || 1,
-      priority: priority || 1
+      deliveryDays: deliveryDays ?? 1,
+      priority: priority ?? 1
     });
 
     const savedArea = await deliveryArea.save();
@@ -103,8 +103,8 @@ const updateDeliveryArea = async (req, res) => {
         name,
         colour: colour || '#3498db',
         postcodes: [...new Set(postcodes.map(pc => pc.toUpperCase()))],
-        deliveryDays: deliveryDays || 1,
-        priority: priority || 1
+        deliveryDays: deliveryDays ?? 1,
+        priority: priority ?? 1
       });
       if (!area) {
         return res.status(404).json({ error: 'Delivery area not found' });
