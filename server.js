@@ -14,11 +14,25 @@ app.use(express.json());
 // Serve static files from public directory
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Database Connection
+// Database Connection (optional for development)
 const DB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/driver-scheduling';
-mongoose.connect(DB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(DB_URI, { 
+    useNewUrlParser: true, 
+    useUnifiedTopology: true,
+    serverSelectionTimeoutMS: 5000,
+    connectTimeoutMS: 5000
+})
     .then(() => console.log('✓ Database connected successfully!'))
-    .catch(err => console.error('✗ Database connection error:', err));
+    .catch(err => {
+        console.warn('⚠ Database connection failed:', err.message);
+        console.warn('⚠ Running without database - API operations will fail');
+        console.warn('⚠ To fix: Install and start MongoDB, or set MONGODB_URI env variable');
+    });
+
+// Handle Mongoose connection errors
+mongoose.connection.on('error', (err) => {
+    console.error('MongoDB connection error:', err);
+});
 
 // API Routes
 app.use('/api', deliveryAreaRoutes);
