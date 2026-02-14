@@ -1,17 +1,32 @@
 # GitHub Pages Setup Instructions
 
-## 🎉 Your app is ready for deployment!
+## 🎉 Your app is ready for automatic deployment!
 
-The Driver Scheduling app has been prepared for GitHub Pages deployment in the `docs/` folder.
+The Driver Scheduling app is configured for fully automated GitHub Pages deployment.
 
-## 📋 Automated Deployment
+## 📋 Automated Deployment - How It Works
 
-The repository now includes a **GitHub Actions workflow** (`.github/workflows/deploy-pages.yml`) that automatically deploys the app to GitHub Pages whenever changes are pushed to the `main` branch.
+The repository includes a **GitHub Actions workflow** (`.github/workflows/deploy-pages.yml`) that **automatically builds and deploys** the app to GitHub Pages whenever changes are pushed to the `main` branch.
 
-### What Happens Automatically:
-- ✅ On every push to `main`, the workflow builds and deploys the app
-- ✅ The `docs/` folder contents are uploaded to GitHub Pages
-- ✅ Your app becomes accessible at: `https://jcuk2025.github.io/Driver-Scheduling/`
+### What Happens Automatically on Every Push:
+1. ✅ **Fresh Build**: The workflow builds the application from source code
+2. ✅ **Auto-Update**: The build output is automatically copied to the `docs/` folder
+3. ✅ **Deployment**: The updated `docs/` folder is deployed to GitHub Pages
+4. ✅ **Live App**: Your app is immediately accessible at: `https://jcuk2025.github.io/Driver-Scheduling/`
+
+**🔥 This means you NEVER have to manually build or update the docs folder - it happens automatically on every push to main!**
+
+### Why This Fixes the Previous Issue:
+Previously, the `docs/` folder would become outdated because:
+- Code changes were made in `src/`
+- The `public/` folder was built with `npm run build`
+- But the `docs/` folder was NOT updated
+- GitHub Pages served the stale `docs/` folder
+
+**Now**, the workflow ensures the `docs/` folder is always up-to-date by:
+- Building fresh on every deployment
+- Automatically copying the latest bundle
+- Deploying the current version
 
 ### One-Time Setup Required:
 
@@ -23,20 +38,14 @@ If this is the first deployment, you need to enable GitHub Pages in repository s
 
 2. **Enable GitHub Pages**
    - In the left sidebar, click **Pages** (under "Code and automation")
-   - Under **Source**, select **"GitHub Actions"** (recommended)
+   - Under **Source**, select **"GitHub Actions"** ⚠️ (important - NOT "Deploy from a branch")
    - Click **Save**
 
 3. **Wait for Deployment**
    - The workflow will automatically run on the next push to `main`
    - Check the **Actions** tab to monitor deployment progress
-   - Deployment typically takes 1-2 minutes
+   - Deployment typically takes 2-3 minutes
    - Once complete, your app will be live at: `https://jcuk2025.github.io/Driver-Scheduling/`
-
-### Alternative Setup (Legacy Method):
-If you prefer manual deployment without Actions:
-- Under **Source**, select "Deploy from a branch"
-- Select `main` branch and `/docs` folder
-- Click **Save**
 
 ## ✅ What's Included
 

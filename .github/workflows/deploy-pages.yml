@@ -25,6 +25,23 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build application
+        run: npm run build
+
+      - name: Copy build to docs folder
+        run: |
+          cp public/bundle.js docs/bundle.js
+          echo "✅ Bundle copied to docs folder for deployment"
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
 

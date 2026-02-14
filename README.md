@@ -249,6 +249,12 @@ npm start
 
 # Start development server with auto-reload
 npm run dev
+
+# Build for production (local server)
+npm run build
+
+# Build and update GitHub Pages deployment files
+npm run build:pages
 ```
 
 ## 🌐 GitHub Pages Deployment
@@ -256,19 +262,35 @@ npm run dev
 The application is deployed to GitHub Pages and accessible at:
 **https://jcuk2025.github.io/Driver-Scheduling/**
 
+### Automatic Deployment
+- **Every push to `main` branch** automatically builds and deploys the latest version to GitHub Pages
+- The GitHub Actions workflow handles building the app and updating the `docs/` folder
+- **No manual steps required** - just push your changes and the app will be updated automatically
+
 ### How It Works
+- The GitHub Actions workflow builds the application fresh on every deployment
+- The build output is automatically copied to the `docs/` folder
 - The app automatically detects when the backend API is not available (as is the case on GitHub Pages)
 - It seamlessly falls back to using browser localStorage for data persistence
 - All features work identically, but data is stored locally in your browser
 - Data persists across sessions on the same browser/device
 
+### Manual Build (Optional)
+If you need to manually build and update the GitHub Pages files:
+```bash
+npm run build:pages
+```
+This will:
+1. Build the production bundle
+2. Copy it to the `docs/` folder
+3. Commit and push the changes to trigger deployment
+
 ### Configuration Steps (Already Done)
 If you want to deploy your own version:
-1. Copy the `docs/` folder contents or configure GitHub Pages to serve from `/docs` directory
+1. The repository is configured to use GitHub Actions for deployment (see `.github/workflows/deploy-pages.yml`)
 2. In your GitHub repository settings, go to **Pages** section
-3. Set **Source** to "Deploy from a branch"
-4. Set **Branch** to `main` (or your default branch) and folder to `/docs`
-5. Click **Save** and wait for deployment to complete
+3. Set **Source** to "GitHub Actions"
+4. Push any changes to `main` branch to trigger automatic deployment
 
 The app in the `docs/` folder uses relative paths and includes localStorage fallback, making it perfect for static hosting on GitHub Pages or any other static hosting service.
 
