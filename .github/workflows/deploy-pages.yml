@@ -38,12 +38,7 @@ jobs:
         run: npm run build
 
       - name: Copy build to docs folder
-        run: npx copyfiles -f public/bundle.* docs/
-        
-      - name: Verify build artifacts
-        run: |
-          echo "✅ Build artifacts copied to docs folder:"
-          ls -lh docs/bundle.*
+        run: node scripts/copy-to-docs.js
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
