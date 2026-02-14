@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import PostcodeMap from './PostcodeMap';
 import './DeliveryAreaForm.css';
 
 const DeliveryAreaForm = ({ onSubmit, onCancel, initialData, mode = 'create' }) => {
@@ -51,6 +52,34 @@ const DeliveryAreaForm = ({ onSubmit, onCancel, initialData, mode = 'create' }) 
       setErrors(prev => ({
         ...prev,
         [name]: undefined
+      }));
+    }
+  };
+
+  const handlePostcodeSelect = (postcode) => {
+    setFormData(prev => {
+      const isSelected = prev.postcodes.includes(postcode);
+      
+      if (isSelected) {
+        // Remove postcode
+        return {
+          ...prev,
+          postcodes: prev.postcodes.filter(p => p !== postcode)
+        };
+      } else {
+        // Add postcode
+        return {
+          ...prev,
+          postcodes: [...prev.postcodes, postcode]
+        };
+      }
+    });
+    
+    // Clear postcode error when user selects from map
+    if (errors.postcodes) {
+      setErrors(prev => ({
+        ...prev,
+        postcodes: undefined
       }));
     }
   };
@@ -163,8 +192,20 @@ const DeliveryAreaForm = ({ onSubmit, onCancel, initialData, mode = 'create' }) 
         </div>
 
         <div className="form-group">
+          <label>
+            Select Postcodes on Map <span className="required">*</span>
+          </label>
+          <PostcodeMap
+            selectedPostcodes={formData.postcodes}
+            onPostcodeSelect={handlePostcodeSelect}
+            selectedColour={formData.colour}
+          />
+          {errors.postcodes && <span className="error-message">{errors.postcodes}</span>}
+        </div>
+
+        <div className="form-group">
           <label htmlFor="postcode-input">
-            Postcodes <span className="required">*</span>
+            Or Add Postcodes Manually
           </label>
           <div className="postcode-input-group">
             <input
@@ -174,7 +215,6 @@ const DeliveryAreaForm = ({ onSubmit, onCancel, initialData, mode = 'create' }) 
               onChange={(e) => setPostcodeInput(e.target.value)}
               onKeyPress={handlePostcodeKeyPress}
               placeholder="Enter postcode (e.g., NR1)"
-              className={errors.postcodes ? 'error' : ''}
             />
             <button
               type="button"
@@ -184,7 +224,6 @@ const DeliveryAreaForm = ({ onSubmit, onCancel, initialData, mode = 'create' }) 
               Add
             </button>
           </div>
-          {errors.postcodes && <span className="error-message">{errors.postcodes}</span>}
           
           {formData.postcodes.length > 0 && (
             <div className="postcodes-list">
