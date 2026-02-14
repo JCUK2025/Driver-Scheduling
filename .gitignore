@@ -18,6 +18,9 @@ build/
 public/bundle.js
 public/bundle.js.map
 public/bundle.js.LICENSE.txt
+docs/bundle.js.map
+docs/index-react.html
+docs/index-standalone-backup.html
 
 # IDE
 .vscode/
