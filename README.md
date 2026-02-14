@@ -2,7 +2,9 @@
 
 A fully functional, production-ready web application for managing delivery areas with an interactive UK postcode map.
 
-> **🚀 Quick Preview:** `npm install && npm start` then open http://localhost:5000
+> **🌐 Live Demo:** [https://jcuk2025.github.io/Driver-Scheduling/](https://jcuk2025.github.io/Driver-Scheduling/)
+
+> **🚀 Quick Preview (Local):** `npm install && npm start` then open http://localhost:5000
 
 ![Driver Scheduling App](https://github.com/user-attachments/assets/4035306e-eb48-4a9d-8661-4773741882b4)
 
@@ -22,7 +24,7 @@ A fully functional, production-ready web application for managing delivery areas
 - Edit existing delivery areas
 - Delete delivery areas with confirmation
 - View all delivery areas in a list
-- Data persists in MongoDB
+- Data persists in localStorage (GitHub Pages) or MongoDB (local deployment)
 
 ✅ **Professional UI/UX**
 - Responsive design for desktop, tablet, and mobile
@@ -248,6 +250,27 @@ npm start
 # Start development server with auto-reload
 npm run dev
 ```
+
+## 🌐 GitHub Pages Deployment
+
+The application is deployed to GitHub Pages and accessible at:
+**https://jcuk2025.github.io/Driver-Scheduling/**
+
+### How It Works
+- The app automatically detects when the backend API is not available (as is the case on GitHub Pages)
+- It seamlessly falls back to using browser localStorage for data persistence
+- All features work identically, but data is stored locally in your browser
+- Data persists across sessions on the same browser/device
+
+### Configuration Steps (Already Done)
+If you want to deploy your own version:
+1. Copy the `docs/` folder contents or configure GitHub Pages to serve from `/docs` directory
+2. In your GitHub repository settings, go to **Pages** section
+3. Set **Source** to "Deploy from a branch"
+4. Set **Branch** to `main` (or your default branch) and folder to `/docs`
+5. Click **Save** and wait for deployment to complete
+
+The app in the `docs/` folder uses relative paths and includes localStorage fallback, making it perfect for static hosting on GitHub Pages or any other static hosting service.
 
 ## 🤝 Contributing
 
