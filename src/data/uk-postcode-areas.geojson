@@ -548,6 +548,42 @@
         "coordinates": [
           [
             [
+              -4.13,
+              56.1
+            ],
+            [
+              -3.83,
+              56.1
+            ],
+            [
+              -3.83,
+              55.800000000000004
+            ],
+            [
+              -4.13,
+              55.800000000000004
+            ],
+            [
+              -4.13,
+              56.1
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "CG",
+        "area": "Cumbernauld",
+        "region": "Scotland",
+        "country": "Scotland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
               -3.04,
               53.339999999999996
             ],
@@ -1304,6 +1340,42 @@
         "coordinates": [
           [
             [
+              -4.78,
+              55.61
+            ],
+            [
+              -4.4799999999999995,
+              55.61
+            ],
+            [
+              -4.4799999999999995,
+              55.31
+            ],
+            [
+              -4.78,
+              55.31
+            ],
+            [
+              -4.78,
+              55.61
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "EY",
+        "area": "Ayr",
+        "region": "Scotland",
+        "country": "Scotland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
               -3.9299999999999997,
               56.15
             ],
@@ -1412,6 +1484,42 @@
         "coordinates": [
           [
             [
+              -2.96,
+              55.769999999999996
+            ],
+            [
+              -2.66,
+              55.769999999999996
+            ],
+            [
+              -2.66,
+              55.47
+            ],
+            [
+              -2.96,
+              55.47
+            ],
+            [
+              -2.96,
+              55.769999999999996
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "GA",
+        "area": "Galashiels",
+        "region": "Scotland",
+        "country": "Scotland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
               -2.39,
               52.01
             ],
@@ -1438,6 +1546,42 @@
         "postcode": "GL",
         "area": "Gloucester",
         "region": "South West England",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -2.39,
+              53.629999999999995
+            ],
+            [
+              -2.0900000000000003,
+              53.629999999999995
+            ],
+            [
+              -2.0900000000000003,
+              53.33
+            ],
+            [
+              -2.39,
+              53.33
+            ],
+            [
+              -2.39,
+              53.629999999999995
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "GM",
+        "area": "Greater Manchester",
+        "region": "North West England",
         "country": "England"
       }
     },
@@ -3032,6 +3176,42 @@
         "coordinates": [
           [
             [
+              -3.85,
+              51.629999999999995
+            ],
+            [
+              -3.5500000000000003,
+              51.629999999999995
+            ],
+            [
+              -3.5500000000000003,
+              51.33
+            ],
+            [
+              -3.85,
+              51.33
+            ],
+            [
+              -3.85,
+              51.629999999999995
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "PN",
+        "area": "Porthcawl",
+        "region": "Wales",
+        "country": "Wales"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
               -1.24,
               50.97
             ],
@@ -3095,6 +3275,42 @@
         "area": "Preston",
         "region": "North West England",
         "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.59,
+              56.55
+            ],
+            [
+              -3.29,
+              56.55
+            ],
+            [
+              -3.29,
+              56.25
+            ],
+            [
+              -3.59,
+              56.25
+            ],
+            [
+              -3.59,
+              56.55
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "PT",
+        "area": "Perth",
+        "region": "Scotland",
+        "country": "Scotland"
       }
     },
     {
@@ -3897,6 +4113,42 @@
           [
             [
               -3.6799999999999997,
+              50.589999999999996
+            ],
+            [
+              -3.38,
+              50.589999999999996
+            ],
+            [
+              -3.38,
+              50.29
+            ],
+            [
+              -3.6799999999999997,
+              50.29
+            ],
+            [
+              -3.6799999999999997,
+              50.589999999999996
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "TO",
+        "area": "Torbay",
+        "region": "South West England",
+        "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.6799999999999997,
               50.61
             ],
             [
@@ -4040,6 +4292,42 @@
         "coordinates": [
           [
             [
+              -7.45,
+              54.75
+            ],
+            [
+              -7.1499999999999995,
+              54.75
+            ],
+            [
+              -7.1499999999999995,
+              54.45
+            ],
+            [
+              -7.45,
+              54.45
+            ],
+            [
+              -7.45,
+              54.75
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "TY",
+        "area": "Tyrone",
+        "region": "Northern Ireland",
+        "country": "Northern Ireland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
               -0.63,
               51.69
             ],
@@ -4067,6 +4355,42 @@
         "area": "Uxbridge",
         "region": "London",
         "country": "England"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.65,
+              54.75
+            ],
+            [
+              -6.35,
+              54.75
+            ],
+            [
+              -6.35,
+              54.45
+            ],
+            [
+              -6.65,
+              54.45
+            ],
+            [
+              -6.65,
+              54.75
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "postcode": "UL",
+        "area": "Ulster",
+        "region": "Northern Ireland",
+        "country": "Northern Ireland"
       }
     },
     {
