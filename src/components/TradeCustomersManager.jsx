@@ -179,6 +179,7 @@ const TradeCustomersManager = () => {
             onCancel={handleCancelForm}
             initialData={editingCustomer}
             mode={editingCustomer ? 'edit' : 'create'}
+            allTradeCustomers={customers}
           />
         </div>
       )}
@@ -219,8 +220,18 @@ const TradeCustomersManager = () => {
                   </div>
                   <div className="customer-content">
                     <div className="customer-detail">
-                      <strong>📍 Postcode Area:</strong>
-                      <span className="postcode-value">{customer.postcodeArea}</span>
+                      <strong>📍 Postcode Areas:</strong>
+                      <div className="postcodes-display">
+                        {customer.postcodes && customer.postcodes.length > 0 ? (
+                          customer.postcodes.map((postcode, idx) => (
+                            <span key={idx} className="postcode-badge">
+                              {postcode}
+                            </span>
+                          ))
+                        ) : (
+                          <span className="no-postcodes">No postcodes assigned</span>
+                        )}
+                      </div>
                     </div>
                     {customer.notes && (
                       <div className="customer-notes">
