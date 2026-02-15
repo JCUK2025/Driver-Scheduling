@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PostcodeMap from './PostcodeMap';
+import { calculateColorFromPostcodes, getRegionDescription, calculateAverageLatitude } from '../utils/colorUtils';
 import './DeliveryAreaForm.css';
 
 const DeliveryAreaForm = ({ onSubmit, onCancel, initialData, mode = 'create', allDeliveryAreas = [] }) => {
@@ -9,8 +10,13 @@ const DeliveryAreaForm = ({ onSubmit, onCancel, initialData, mode = 'create', al
     postcodes: [],
     deliveryDays: 1,
     priority: 1,
+    weekAssignment: null,
+    consecutiveWith: null,
+    routeOrder: null,
     notes: ''
   });
+  const [autoColor, setAutoColor] = useState('#3498db');
+  const [colorOverridden, setColorOverridden] = useState(false);
   const [postcodeInput, setPostcodeInput] = useState('');
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -23,10 +29,27 @@ const DeliveryAreaForm = ({ onSubmit, onCancel, initialData, mode = 'create', al
         postcodes: initialData.postcodes || [],
         deliveryDays: initialData.deliveryDays || 1,
         priority: initialData.priority || 1,
+        weekAssignment: initialData.weekAssignment || null,
+        consecutiveWith: initialData.consecutiveWith || null,
+        routeOrder: initialData.routeOrder || null,
         notes: initialData.notes || ''
       });
+      // When editing, assume color may have been manually set
+      setColorOverridden(true);
     }
   }, [initialData, mode]);
+
+  // Auto-calculate color when postcodes change
+  useEffect(() => {
+    if (formData.postcodes.length > 0 && !colorOverridden) {
+      const calculatedColor = calculateColorFromPostcodes(formData.postcodes);
+      setAutoColor(calculatedColor);
+      setFormData(prev => ({
+        ...prev,
+        colour: calculatedColor
+      }));
+    }
+  }, [formData.postcodes, colorOverridden]);
 
   const validateForm = () => {
     const newErrors = {};
@@ -52,8 +75,13 @@ const DeliveryAreaForm = ({ onSubmit, onCancel, initialData, mode = 'create', al
     
     // Convert numeric fields to numbers
     let processedValue = value;
-    if (name === 'deliveryDays' || name === 'priority') {
-      processedValue = parseInt(value, 10);
+    if (name === 'deliveryDays' || name === 'priority' || name === 'weekAssignment' || name === 'routeOrder') {
+      processedValue = value === '' || value === 'null' ? null : parseInt(value, 10);
+    }
+    
+    // If color is manually changed, mark it as overridden
+    if (name === 'colour') {
+      setColorOverridden(true);
     }
     
     setFormData(prev => ({
@@ -65,6 +93,18 @@ const DeliveryAreaForm = ({ onSubmit, onCancel, initialData, mode = 'create', al
       setErrors(prev => ({
         ...prev,
         [name]: undefined
+      }));
+    }
+  };
+
+  const handleResetColor = () => {
+    setColorOverridden(false);
+    if (formData.postcodes.length > 0) {
+      const calculatedColor = calculateColorFromPostcodes(formData.postcodes);
+      setAutoColor(calculatedColor);
+      setFormData(prev => ({
+        ...prev,
+        colour: calculatedColor
       }));
     }
   };
@@ -200,7 +240,26 @@ const DeliveryAreaForm = ({ onSubmit, onCancel, initialData, mode = 'create', al
               className={`colour-text ${errors.colour ? 'error' : ''}`}
               maxLength="7"
             />
+            {colorOverridden && formData.postcodes.length > 0 && (
+              <button
+                type="button"
+                onClick={handleResetColor}
+                className="btn-reset-color"
+                title="Reset to auto-calculated color"
+              >
+                Reset
+              </button>
+            )}
           </div>
+          {formData.postcodes.length > 0 && (
+            <small className="help-text">
+              {colorOverridden ? (
+                <>Color manually overridden. Auto-suggested: <span style={{ color: autoColor }}>●</span> {autoColor}</>
+              ) : (
+                <>Auto-calculated from postcodes ({getRegionDescription(calculateAverageLatitude(formData.postcodes))})</>
+              )}
+            </small>
+          )}
           {errors.colour && <span className="error-message">{errors.colour}</span>}
         </div>
 
@@ -233,11 +292,76 @@ const DeliveryAreaForm = ({ onSubmit, onCancel, initialData, mode = 'create', al
             onChange={handleInputChange}
             className={errors.priority ? 'error' : ''}
           >
-            <option value={1}>Priority 1 (5-10 days delivery)</option>
-            <option value={2}>Priority 2 (10-15 days delivery)</option>
+            <option value={1}>Priority 1 (Weekly - runs every week)</option>
+            <option value={2}>Priority 2 (Fortnightly - runs every 2 weeks)</option>
           </select>
           {errors.priority && <span className="error-message">{errors.priority}</span>}
         </div>
+
+        <div className="form-group">
+          <label htmlFor="weekAssignment">
+            Week Assignment
+          </label>
+          <select
+            id="weekAssignment"
+            name="weekAssignment"
+            value={formData.weekAssignment === null ? 'null' : formData.weekAssignment}
+            onChange={handleInputChange}
+          >
+            <option value="null">Both weeks (default)</option>
+            <option value={1}>Week 1 only</option>
+            <option value={2}>Week 2 only</option>
+          </select>
+          <small className="help-text">
+            Specify if this area should only be delivered in a specific week of the 2-week rotation
+          </small>
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="consecutiveWith">
+            Consecutive Route Partner
+          </label>
+          <select
+            id="consecutiveWith"
+            name="consecutiveWith"
+            value={formData.consecutiveWith || ''}
+            onChange={handleInputChange}
+          >
+            <option value="">None (standalone route)</option>
+            {allDeliveryAreas
+              .filter(area => mode === 'edit' ? area._id !== initialData?._id : true)
+              .map(area => (
+                <option key={area._id} value={area._id}>
+                  {area.name}
+                </option>
+              ))}
+          </select>
+          <small className="help-text">
+            Select another delivery area that runs consecutively with this one
+          </small>
+        </div>
+
+        {formData.consecutiveWith && (
+          <div className="form-group">
+            <label htmlFor="routeOrder">
+              Route Order
+            </label>
+            <select
+              id="routeOrder"
+              name="routeOrder"
+              value={formData.routeOrder === null ? 'null' : formData.routeOrder}
+              onChange={handleInputChange}
+            >
+              <option value="null">Not specified</option>
+              <option value={1}>First (Day 1)</option>
+              <option value={2}>Second (Day 2)</option>
+              <option value={3}>Third (Day 3)</option>
+            </select>
+            <small className="help-text">
+              Order in the consecutive route sequence
+            </small>
+          </div>
+        )}
 
         <div className="form-group">
           <label>
