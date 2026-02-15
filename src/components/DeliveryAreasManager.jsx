@@ -169,6 +169,7 @@ const DeliveryAreasManager = () => {
             onCancel={handleCancelForm}
             initialData={editingArea}
             mode={editingArea ? 'edit' : 'create'}
+            allDeliveryAreas={deliveryAreas}
           />
         </div>
       )}

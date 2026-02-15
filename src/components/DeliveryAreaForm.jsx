@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PostcodeMap from './PostcodeMap';
 import './DeliveryAreaForm.css';
 
-const DeliveryAreaForm = ({ onSubmit, onCancel, initialData, mode = 'create' }) => {
+const DeliveryAreaForm = ({ onSubmit, onCancel, initialData, mode = 'create', allDeliveryAreas = [] }) => {
   const [formData, setFormData] = useState({
     name: '',
     colour: '#3498db',
@@ -245,6 +245,9 @@ const DeliveryAreaForm = ({ onSubmit, onCancel, initialData, mode = 'create' }) 
             selectedPostcodes={formData.postcodes}
             onPostcodeSelect={handlePostcodeSelect}
             selectedColour={formData.colour}
+            allDeliveryAreas={allDeliveryAreas.filter(area => 
+              mode === 'edit' ? area._id !== initialData?._id : true
+            )}
           />
           {errors.postcodes && <span className="error-message">{errors.postcodes}</span>}
         </div>
