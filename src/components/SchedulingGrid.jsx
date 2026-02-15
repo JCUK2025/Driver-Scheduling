@@ -221,8 +221,8 @@ const SchedulingGrid = ({ drivers, deliveryAreas, schedule, onScheduleChange }) 
                           const assignment = cellAssignments[0];
                           const startIndex = DAYS.indexOf(assignment.startDay);
                           
-                          // Only apply colspan on the starting day
-                          if (dayIndex === startIndex) {
+                          // Only apply colspan on the starting day (and validate startDay is valid)
+                          if (startIndex >= 0 && dayIndex === startIndex) {
                             colspan = assignment.deliveryDays;
                             
                             // Mark subsequent days as skip
