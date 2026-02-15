@@ -104,6 +104,15 @@ const SchedulingManager = () => {
       });
     });
 
+    // Helper to check if driver can handle multi-day deliveries
+    const canHandleMultiDayDelivery = (driver, deliveryDays) => {
+      // Only Johnnie West and Colin Brown can handle 2-day and 3-day deliveries
+      if (deliveryDays >= 2) {
+        return driver.name === 'Johnnie West' || driver.name === 'Colin Brown';
+      }
+      return true;
+    };
+
     // Helper to check if driver is available for a range of days
     const isDriverAvailable = (driverId, week, startDayIndex, numDays) => {
       for (let i = 0; i < numDays; i++) {
@@ -152,6 +161,9 @@ const SchedulingManager = () => {
       for (const driver of sortedDrivers) {
         if (assigned) break;
         if (driver.deliveryDayCapability < area.deliveryDays) continue;
+        
+        // Check if driver can handle multi-day deliveries
+        if (!canHandleMultiDayDelivery(driver, area.deliveryDays)) continue;
 
         // Try each day
         for (let dayIndex = 0; dayIndex <= DAYS.length - area.deliveryDays; dayIndex++) {
@@ -185,6 +197,9 @@ const SchedulingManager = () => {
       for (const driver of sortedDrivers) {
         if (assignedAreas.has(area._id)) break;
         if (driver.deliveryDayCapability < area.deliveryDays) continue;
+        
+        // Check if driver can handle multi-day deliveries
+        if (!canHandleMultiDayDelivery(driver, area.deliveryDays)) continue;
 
         for (let dayIndex = 0; dayIndex <= DAYS.length - area.deliveryDays; dayIndex++) {
           // For 3-day deliveries, must start by Wednesday

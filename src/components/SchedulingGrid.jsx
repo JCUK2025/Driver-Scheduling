@@ -46,6 +46,15 @@ const SchedulingGrid = ({ drivers, deliveryAreas, schedule, onScheduleChange }) 
       return;
     }
 
+    // Check if driver can handle multi-day deliveries (only Johnnie West and Colin Brown for 2+ day deliveries)
+    if (draggedArea.deliveryDays >= 2) {
+      if (driver.name !== 'Johnnie West' && driver.name !== 'Colin Brown') {
+        alert(`Only Johnnie West and Colin Brown can handle ${draggedArea.deliveryDays}-day deliveries. ${driver.name} can only handle 1-day deliveries.`);
+        setDraggedArea(null);
+        return;
+      }
+    }
+
     // For multi-day deliveries, ensure there are enough days remaining
     const dayIndex = DAYS.indexOf(day);
     const daysRemaining = DAYS.length - dayIndex;
