@@ -1,0 +1,285 @@
+.scheduling-grid-container {
+  padding: 20px 0;
+}
+
+.week-section {
+  margin-bottom: 50px;
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.week-title {
+  margin: 0 0 20px 0;
+  color: #2c3e50;
+  font-size: 1.5rem;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #667eea;
+}
+
+.grid-wrapper {
+  overflow-x: auto;
+  margin-bottom: 30px;
+}
+
+.scheduling-grid {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 800px;
+}
+
+.scheduling-grid th,
+.scheduling-grid td {
+  border: 1px solid #e0e0e0;
+  padding: 0;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.scheduling-grid thead th {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  font-weight: 600;
+  padding: 15px 10px;
+  font-size: 0.95rem;
+}
+
+.driver-column {
+  width: 200px;
+  text-align: left;
+  padding-left: 15px !important;
+}
+
+.day-column {
+  width: calc((100% - 200px) / 5);
+  min-width: 120px;
+}
+
+.driver-cell {
+  background: #f8f9fa;
+  padding: 15px;
+  text-align: left;
+}
+
+.driver-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.driver-name {
+  font-weight: 600;
+  color: #2c3e50;
+  font-size: 0.95rem;
+}
+
+.driver-priority {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 3px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  width: fit-content;
+}
+
+.driver-priority.priority-p1 {
+  background: #667eea;
+  color: white;
+}
+
+.driver-priority.priority-p2 {
+  background: #95a5a6;
+  color: white;
+}
+
+.schedule-cell {
+  height: 80px;
+  background: white;
+  position: relative;
+  transition: background-color 0.2s ease;
+}
+
+.schedule-cell:hover {
+  background: #f8f9fa;
+}
+
+.schedule-cell.unavailable {
+  background: repeating-linear-gradient(
+    45deg,
+    #f5f5f5,
+    #f5f5f5 10px,
+    #e9e9e9 10px,
+    #e9e9e9 20px
+  );
+  cursor: not-allowed;
+}
+
+.schedule-cell.assignment-start {
+  padding: 5px;
+}
+
+.schedule-cell.assignment-continue {
+  background: transparent;
+  border-left: none;
+}
+
+.assignment-card {
+  border-radius: 6px;
+  padding: 8px 10px;
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  cursor: move;
+}
+
+.assignment-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 5px;
+}
+
+.assignment-name {
+  flex: 1;
+  line-height: 1.3;
+  word-wrap: break-word;
+}
+
+.remove-assignment {
+  background: rgba(0, 0, 0, 0.3);
+  border: none;
+  color: white;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 1;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.remove-assignment:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.assignment-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.assignment-info small {
+  opacity: 0.9;
+  font-size: 0.75rem;
+}
+
+.unassigned-areas {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 2px solid #e0e0e0;
+}
+
+.unassigned-areas h3 {
+  margin: 0 0 15px 0;
+  color: #2c3e50;
+  font-size: 1.1rem;
+}
+
+.areas-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.area-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 15px;
+  border-radius: 6px;
+  color: white;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: grab;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.area-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.area-badge:active {
+  cursor: grabbing;
+}
+
+.area-name {
+  flex: 1;
+}
+
+.area-days,
+.area-priority {
+  padding: 2px 6px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  font-size: 0.75rem;
+}
+
+.no-areas {
+  color: #7f8c8d;
+  font-style: italic;
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .scheduling-grid {
+    min-width: 600px;
+  }
+
+  .driver-column {
+    width: 150px;
+  }
+
+  .day-column {
+    min-width: 90px;
+  }
+
+  .schedule-cell {
+    height: 70px;
+  }
+
+  .assignment-card {
+    font-size: 0.8rem;
+    padding: 6px 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .week-section {
+    padding: 15px;
+  }
+
+  .areas-list {
+    gap: 8px;
+  }
+
+  .area-badge {
+    font-size: 0.85rem;
+    padding: 8px 12px;
+  }
+}
