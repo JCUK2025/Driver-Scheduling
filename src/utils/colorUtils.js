@@ -3,7 +3,8 @@
  * Based on latitude from postcode data
  */
 
-// Import postcode data
+// Import postcode data from existing data files
+// These files are part of the repository's geographic data
 import postcodeData from '../data/uk-postcodes.json';
 import postcodeAreasData from '../data/postcode-areas.json';
 
