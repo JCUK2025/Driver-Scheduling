@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import DeliveryAreaForm from './DeliveryAreaForm';
 import './DeliveryAreasManager.css';
 
+const STORAGE_KEY = 'deliveryAreas';
+
 const DeliveryAreasManager = () => {
   const [deliveryAreas, setDeliveryAreas] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -11,23 +13,16 @@ const DeliveryAreasManager = () => {
   const [successMessage, setSuccessMessage] = useState(null);
   const [deleteConfirm, setDeleteConfirm] = useState(null);
 
-  const API_URL = '/api/delivery-areas';
-
   useEffect(() => {
     fetchDeliveryAreas();
   }, []);
 
-  const fetchDeliveryAreas = async () => {
+  const fetchDeliveryAreas = () => {
     try {
       setLoading(true);
       setError(null);
-      const response = await fetch(API_URL);
-      
-      if (!response.ok) {
-        throw new Error('Failed to fetch delivery areas');
-      }
-      
-      const data = await response.json();
+      const stored = localStorage.getItem(STORAGE_KEY);
+      const data = stored ? JSON.parse(stored) : [];
       setDeliveryAreas(data);
     } catch (err) {
       setError(err.message);
@@ -37,23 +32,25 @@ const DeliveryAreasManager = () => {
     }
   };
 
-  const handleCreateArea = async (formData) => {
+  const saveToLocalStorage = (areas) => {
     try {
-      const response = await fetch(API_URL, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(areas));
+    } catch (err) {
+      console.error('Error saving to localStorage:', err);
+      throw new Error('Failed to save data');
+    }
+  };
 
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.error || 'Failed to create delivery area');
-      }
-
-      const newArea = await response.json();
-      setDeliveryAreas(prev => [newArea, ...prev]);
+  const handleCreateArea = (formData) => {
+    try {
+      const newArea = {
+        ...formData,
+        _id: Date.now().toString(), // Simple ID generation
+        createdAt: new Date().toISOString(),
+      };
+      const updatedAreas = [newArea, ...deliveryAreas];
+      setDeliveryAreas(updatedAreas);
+      saveToLocalStorage(updatedAreas);
       setShowForm(false);
       showSuccessMessage('Delivery area created successfully!');
     } catch (err) {
@@ -62,25 +59,17 @@ const DeliveryAreasManager = () => {
     }
   };
 
-  const handleUpdateArea = async (formData) => {
+  const handleUpdateArea = (formData) => {
     try {
-      const response = await fetch(`${API_URL}/${editingArea._id}`, {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.error || 'Failed to update delivery area');
-      }
-
-      const updatedArea = await response.json();
-      setDeliveryAreas(prev =>
-        prev.map(area => area._id === updatedArea._id ? updatedArea : area)
+      const updatedArea = {
+        ...editingArea,
+        ...formData,
+      };
+      const updatedAreas = deliveryAreas.map(area => 
+        area._id === updatedArea._id ? updatedArea : area
       );
+      setDeliveryAreas(updatedAreas);
+      saveToLocalStorage(updatedAreas);
       setEditingArea(null);
       setShowForm(false);
       showSuccessMessage('Delivery area updated successfully!');
@@ -90,17 +79,11 @@ const DeliveryAreasManager = () => {
     }
   };
 
-  const handleDeleteArea = async (areaId) => {
+  const handleDeleteArea = (areaId) => {
     try {
-      const response = await fetch(`${API_URL}/${areaId}`, {
-        method: 'DELETE',
-      });
-
-      if (!response.ok) {
-        throw new Error('Failed to delete delivery area');
-      }
-
-      setDeliveryAreas(prev => prev.filter(area => area._id !== areaId));
+      const updatedAreas = deliveryAreas.filter(area => area._id !== areaId);
+      setDeliveryAreas(updatedAreas);
+      saveToLocalStorage(updatedAreas);
       setDeleteConfirm(null);
       showSuccessMessage('Delivery area deleted successfully!');
     } catch (err) {

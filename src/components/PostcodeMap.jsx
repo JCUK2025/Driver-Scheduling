@@ -137,7 +137,7 @@ const PostcodeMap = ({ selectedPostcodes = [], onPostcodeSelect, selectedColour 
 
       {/* Map */}
       <MapContainer
-        center={[54.5, -3.5]}
+        center={[54.5, -2.5]}
         zoom={6}
         minZoom={5}
         maxZoom={10}
@@ -146,9 +146,9 @@ const PostcodeMap = ({ selectedPostcodes = [], onPostcodeSelect, selectedColour 
         style={{ height: '100%', width: '100%' }}
         zoomControl={false}
         scrollWheelZoom={true}
-        wheelPxPerZoomLevel={120}
-        zoomDelta={0.5}
-        zoomSnap={0.5}
+        wheelPxPerZoomLevel={180}
+        zoomDelta={0.25}
+        zoomSnap={0.25}
       >
         <TileLayer
           url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
