@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import SchedulingGrid from './SchedulingGrid';
 import DriversManager from './DriversManager';
+import jsPDF from 'jspdf';
+import 'jspdf-autotable';
 import './SchedulingManager.css';
 
 const STORAGE_KEYS = {
@@ -204,9 +206,182 @@ const SchedulingManager = () => {
   };
 
   const handleGeneratePDF = async () => {
-    // We'll implement PDF generation using jsPDF
-    alert('PDF generation will be implemented in the next phase. For now, you can use your browser\'s print functionality (Ctrl+P or Cmd+P) to save as PDF.');
-    window.print();
+    const doc = new jsPDF({
+      orientation: 'landscape',
+      unit: 'mm',
+      format: 'a4'
+    });
+
+    const DAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+    const pageWidth = doc.internal.pageSize.getWidth();
+    const margin = 14;
+
+    // Title
+    doc.setFontSize(18);
+    doc.setFont('helvetica', 'bold');
+    doc.text('Driver Delivery Schedule', margin, 20);
+
+    doc.setFontSize(10);
+    doc.setFont('helvetica', 'normal');
+    doc.text(`Generated: ${new Date().toLocaleDateString()} ${new Date().toLocaleTimeString()}`, margin, 27);
+
+    let yPosition = 35;
+
+    // Generate schedule for each week
+    [1, 2].forEach((week, weekIndex) => {
+      if (weekIndex > 0) {
+        doc.addPage();
+        yPosition = 20;
+      }
+
+      doc.setFontSize(14);
+      doc.setFont('helvetica', 'bold');
+      doc.text(`Week ${week}`, margin, yPosition);
+      yPosition += 8;
+
+      // Prepare table data
+      const tableData = drivers.map(driver => {
+        const row = [driver.name];
+        
+        DAYS.forEach(day => {
+          const assignment = schedule.assignments.find(a => {
+            if (a.driverId !== driver._id || a.week !== week) return false;
+            const startIndex = DAYS.indexOf(a.startDay);
+            const endIndex = DAYS.indexOf(a.endDay);
+            const currentIndex = DAYS.indexOf(day);
+            return currentIndex >= startIndex && currentIndex <= endIndex;
+          });
+
+          if (assignment) {
+            const area = deliveryAreas.find(a => a._id === assignment.deliveryAreaId);
+            if (area) {
+              const startIndex = DAYS.indexOf(assignment.startDay);
+              const currentIndex = DAYS.indexOf(day);
+              if (currentIndex === startIndex) {
+                row.push(`${area.name}\n(P${area.priority}, ${area.deliveryDays}d)`);
+              } else {
+                row.push('→');
+              }
+            } else {
+              row.push('');
+            }
+          } else {
+            row.push('');
+          }
+        });
+
+        return row;
+      });
+
+      // Create table
+      doc.autoTable({
+        startY: yPosition,
+        head: [['Driver', ...DAYS]],
+        body: tableData,
+        theme: 'grid',
+        headStyles: {
+          fillColor: [102, 126, 234],
+          fontSize: 10,
+          fontStyle: 'bold',
+          halign: 'center'
+        },
+        bodyStyles: {
+          fontSize: 8,
+          cellPadding: 3,
+          minCellHeight: 12
+        },
+        columnStyles: {
+          0: { cellWidth: 40, fontStyle: 'bold' },
+          1: { cellWidth: 'auto', halign: 'center' },
+          2: { cellWidth: 'auto', halign: 'center' },
+          3: { cellWidth: 'auto', halign: 'center' },
+          4: { cellWidth: 'auto', halign: 'center' },
+          5: { cellWidth: 'auto', halign: 'center' }
+        },
+        didParseCell: function(data) {
+          // Color code cells based on delivery area
+          if (data.section === 'body' && data.column.index > 0) {
+            const cellText = data.cell.text[0];
+            if (cellText && cellText !== '' && cellText !== '→') {
+              // Find matching area for this cell
+              const driver = drivers[data.row.index];
+              const day = DAYS[data.column.index - 1];
+              const assignment = schedule.assignments.find(a => {
+                if (a.driverId !== driver._id || a.week !== week) return false;
+                const startIndex = DAYS.indexOf(a.startDay);
+                const currentIndex = DAYS.indexOf(day);
+                return currentIndex === startIndex;
+              });
+              
+              if (assignment) {
+                const area = deliveryAreas.find(a => a._id === assignment.deliveryAreaId);
+                if (area && area.colour) {
+                  // Convert hex to RGB
+                  const hex = area.colour.replace('#', '');
+                  const r = parseInt(hex.substring(0, 2), 16);
+                  const g = parseInt(hex.substring(2, 4), 16);
+                  const b = parseInt(hex.substring(4, 6), 16);
+                  data.cell.styles.fillColor = [r, g, b];
+                  data.cell.styles.textColor = [255, 255, 255];
+                  data.cell.styles.fontStyle = 'bold';
+                }
+              }
+            } else if (cellText === '→') {
+              data.cell.styles.fillColor = [240, 240, 240];
+              data.cell.styles.halign = 'center';
+              data.cell.styles.fontSize = 12;
+            }
+          }
+        },
+        margin: { left: margin, right: margin }
+      });
+
+      // Add unassigned areas list
+      yPosition = doc.lastAutoTable.finalY + 10;
+      
+      const unassignedAreas = deliveryAreas.filter(area => {
+        return !schedule.assignments.some(a => a.week === week && a.deliveryAreaId === area._id);
+      });
+
+      if (unassignedAreas.length > 0) {
+        doc.setFontSize(10);
+        doc.setFont('helvetica', 'bold');
+        doc.text('Unassigned Areas:', margin, yPosition);
+        yPosition += 5;
+
+        doc.setFont('helvetica', 'normal');
+        doc.setFontSize(9);
+        unassignedAreas.forEach(area => {
+          doc.text(`• ${area.name} (P${area.priority}, ${area.deliveryDays} day${area.deliveryDays > 1 ? 's' : ''})`, margin + 5, yPosition);
+          yPosition += 5;
+        });
+      }
+    });
+
+    // Add legend on last page
+    yPosition = doc.lastAutoTable.finalY + 15;
+    if (yPosition > doc.internal.pageSize.getHeight() - 40) {
+      doc.addPage();
+      yPosition = 20;
+    }
+
+    doc.setFontSize(10);
+    doc.setFont('helvetica', 'bold');
+    doc.text('Legend:', margin, yPosition);
+    yPosition += 6;
+
+    doc.setFontSize(9);
+    doc.setFont('helvetica', 'normal');
+    doc.text('P1 = Priority 1 (Same day each week)', margin + 5, yPosition);
+    yPosition += 5;
+    doc.text('P2 = Priority 2 (Fortnightly delivery)', margin + 5, yPosition);
+    yPosition += 5;
+    doc.text('→ = Continuation of multi-day delivery', margin + 5, yPosition);
+    yPosition += 5;
+    doc.text('Xd = Number of days required for delivery', margin + 5, yPosition);
+
+    // Save the PDF
+    doc.save(`delivery-schedule-${new Date().toISOString().split('T')[0]}.pdf`);
   };
 
   // Reload data when switching views to pick up any changes
