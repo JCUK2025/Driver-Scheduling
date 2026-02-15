@@ -23,7 +23,7 @@ function App() {
           className={`nav-tab ${activeTab === 'trade-customers' ? 'active' : ''}`}
           onClick={() => setActiveTab('trade-customers')}
         >
-          👥 Trade Customers
+          👥 Customer Management
         </button>
       </nav>
       <main className="App-main">

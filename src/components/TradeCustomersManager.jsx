@@ -152,10 +152,10 @@ const TradeCustomersManager = () => {
   return (
     <div className="trade-customers-manager">
       <div className="manager-header">
-        <h1>Trade Customers</h1>
+        <h1>Customer Management</h1>
         {!showForm && (
           <button onClick={handleCreateNew} className="btn btn-primary">
-            + Add Trade Customer
+            + Add Customer
           </button>
         )}
       </div>
