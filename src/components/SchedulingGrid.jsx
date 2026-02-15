@@ -192,8 +192,21 @@ const SchedulingGrid = ({ drivers, deliveryAreas, schedule, onScheduleChange }) 
               </thead>
               <tbody>
                 {drivers.map(driver => {
-                  // Track which day indices to skip for this row
+                  // Pre-calculate which day indices to skip for this driver/week
                   const skipDays = new Set();
+                  DAYS.forEach((day, dayIndex) => {
+                    const cellAssignments = getAssignmentsForCell(driver._id, day, week);
+                    if (cellAssignments.length > 0) {
+                      const assignment = cellAssignments[0];
+                      const startIndex = DAYS.indexOf(assignment.startDay);
+                      // If this is the start of a multi-day assignment, mark subsequent days to skip
+                      if (startIndex >= 0 && dayIndex === startIndex && assignment.deliveryDays > 1) {
+                        for (let i = 1; i < assignment.deliveryDays; i++) {
+                          skipDays.add(dayIndex + i);
+                        }
+                      }
+                    }
+                  });
                   
                   return (
                     <tr key={driver._id}>
@@ -224,11 +237,6 @@ const SchedulingGrid = ({ drivers, deliveryAreas, schedule, onScheduleChange }) 
                           // Only apply colspan on the starting day (and validate startDay is valid)
                           if (startIndex >= 0 && dayIndex === startIndex) {
                             colspan = assignment.deliveryDays;
-                            
-                            // Mark subsequent days as skip
-                            for (let i = 1; i < assignment.deliveryDays; i++) {
-                              skipDays.add(dayIndex + i);
-                            }
                           }
                         }
                         
