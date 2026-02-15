@@ -3,6 +3,7 @@ import SchedulingGrid from './SchedulingGrid';
 import DriversManager from './DriversManager';
 import jsPDF from 'jspdf';
 import 'jspdf-autotable';
+import { canHandleMultiDayDelivery } from '../utils/driverValidation';
 import './SchedulingManager.css';
 
 const STORAGE_KEYS = {
@@ -152,6 +153,9 @@ const SchedulingManager = () => {
       for (const driver of sortedDrivers) {
         if (assigned) break;
         if (driver.deliveryDayCapability < area.deliveryDays) continue;
+        
+        // Check if driver can handle multi-day deliveries
+        if (!canHandleMultiDayDelivery(driver, area.deliveryDays)) continue;
 
         // Try each day
         for (let dayIndex = 0; dayIndex <= DAYS.length - area.deliveryDays; dayIndex++) {
@@ -185,6 +189,9 @@ const SchedulingManager = () => {
       for (const driver of sortedDrivers) {
         if (assignedAreas.has(area._id)) break;
         if (driver.deliveryDayCapability < area.deliveryDays) continue;
+        
+        // Check if driver can handle multi-day deliveries
+        if (!canHandleMultiDayDelivery(driver, area.deliveryDays)) continue;
 
         for (let dayIndex = 0; dayIndex <= DAYS.length - area.deliveryDays; dayIndex++) {
           // For 3-day deliveries, must start by Wednesday

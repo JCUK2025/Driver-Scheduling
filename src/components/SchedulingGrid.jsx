@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { canHandleMultiDayDelivery, AUTHORIZED_MULTI_DAY_DRIVERS } from '../utils/driverValidation';
 import './SchedulingGrid.css';
 
 const DAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
@@ -42,6 +43,14 @@ const SchedulingGrid = ({ drivers, deliveryAreas, schedule, onScheduleChange }) 
     // Check if driver can handle this delivery area's duration
     if (driver.deliveryDayCapability < draggedArea.deliveryDays) {
       alert(`${driver.name} can only handle ${driver.deliveryDayCapability}-day deliveries, but ${draggedArea.name} requires ${draggedArea.deliveryDays} days`);
+      setDraggedArea(null);
+      return;
+    }
+
+    // Check if driver can handle multi-day deliveries
+    if (!canHandleMultiDayDelivery(driver, draggedArea.deliveryDays)) {
+      const authorizedDriverNames = AUTHORIZED_MULTI_DAY_DRIVERS.join(' and ');
+      alert(`Only ${authorizedDriverNames} can handle ${draggedArea.deliveryDays}-day deliveries.`);
       setDraggedArea(null);
       return;
     }
