@@ -88,6 +88,30 @@
   flex: 1;
 }
 
+.btn-reset-color {
+  padding: 10px 16px;
+  background: #95a5a6;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  white-space: nowrap;
+  transition: background-color 0.3s;
+}
+
+.btn-reset-color:hover {
+  background: #7f8c8d;
+}
+
+.help-text {
+  display: block;
+  color: #7f8c8d;
+  font-size: 12px;
+  margin-top: 4px;
+  font-style: italic;
+}
+
 .postcode-input-group {
   display: flex;
   gap: 8px;
