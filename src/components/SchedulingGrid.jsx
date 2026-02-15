@@ -139,14 +139,11 @@ const SchedulingGrid = ({ drivers, deliveryAreas, schedule, onScheduleChange }) 
       return null;
     }
 
-    const spanDays = assignment.deliveryDays;
-
     return (
       <div 
         className="assignment-card"
         style={{ 
-          backgroundColor: area.colour,
-          gridColumn: `span ${spanDays}`
+          backgroundColor: area.colour
         }}
       >
         <div className="assignment-content">
@@ -194,34 +191,62 @@ const SchedulingGrid = ({ drivers, deliveryAreas, schedule, onScheduleChange }) 
                 </tr>
               </thead>
               <tbody>
-                {drivers.map(driver => (
-                  <tr key={driver._id}>
-                    <td className="driver-cell">
-                      <div className="driver-info">
-                        <span className="driver-name">{driver.name}</span>
-                        <span className={`driver-priority priority-${driver.priority.toLowerCase()}`}>
-                          {driver.priority}
-                        </span>
-                      </div>
-                    </td>
-                    {DAYS.map((day, dayIndex) => {
-                      const cellAssignments = getAssignmentsForCell(driver._id, day, week);
-                      const cellClass = getCellClass(driver._id, day, week, cellAssignments);
-                      const isAvailable = driver.availableDays.includes(day);
-                      
-                      return (
-                        <td
-                          key={day}
-                          className={`schedule-cell ${cellClass} ${!isAvailable ? 'unavailable' : ''}`}
-                          onDragOver={handleDragOver}
-                          onDrop={(e) => handleDrop(e, driver._id, day, week)}
-                        >
-                          {cellAssignments.length > 0 && renderAssignmentCell(cellAssignments[0], driver._id, day, week)}
-                        </td>
-                      );
-                    })}
-                  </tr>
-                ))}
+                {drivers.map(driver => {
+                  // Track which day indices to skip for this row
+                  const skipDays = new Set();
+                  
+                  return (
+                    <tr key={driver._id}>
+                      <td className="driver-cell">
+                        <div className="driver-info">
+                          <span className="driver-name">{driver.name}</span>
+                          <span className={`driver-priority priority-${driver.priority.toLowerCase()}`}>
+                            {driver.priority}
+                          </span>
+                        </div>
+                      </td>
+                      {DAYS.map((day, dayIndex) => {
+                        // Skip cells that are part of a multi-day assignment
+                        if (skipDays.has(dayIndex)) {
+                          return null;
+                        }
+                        
+                        const cellAssignments = getAssignmentsForCell(driver._id, day, week);
+                        const cellClass = getCellClass(driver._id, day, week, cellAssignments);
+                        const isAvailable = driver.availableDays.includes(day);
+                        
+                        // Calculate colspan for multi-day assignments
+                        let colspan = 1;
+                        if (cellAssignments.length > 0) {
+                          const assignment = cellAssignments[0];
+                          const startIndex = DAYS.indexOf(assignment.startDay);
+                          
+                          // Only apply colspan on the starting day (and validate startDay is valid)
+                          if (startIndex >= 0 && dayIndex === startIndex) {
+                            colspan = assignment.deliveryDays;
+                            
+                            // Mark subsequent days as skip
+                            for (let i = 1; i < assignment.deliveryDays; i++) {
+                              skipDays.add(dayIndex + i);
+                            }
+                          }
+                        }
+                        
+                        return (
+                          <td
+                            key={day}
+                            colSpan={colspan}
+                            className={`schedule-cell ${cellClass} ${!isAvailable ? 'unavailable' : ''}`}
+                            onDragOver={handleDragOver}
+                            onDrop={(e) => handleDrop(e, driver._id, day, week)}
+                          >
+                            {cellAssignments.length > 0 && renderAssignmentCell(cellAssignments[0], driver._id, day, week)}
+                          </td>
+                        );
+                      })}
+                    </tr>
+                  );
+                })}
               </tbody>
             </table>
           </div>

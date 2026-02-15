@@ -18,6 +18,10 @@ build/
 public/bundle.js
 public/bundle.js.map
 public/bundle.js.LICENSE.txt
+public/vendors-*.bundle.js
+public/vendors-*.bundle.js.map
+public/*.bundle.js
+public/*.bundle.js.map
 docs/bundle.js.map
 docs/index-react.html
 docs/index-standalone-backup.html
