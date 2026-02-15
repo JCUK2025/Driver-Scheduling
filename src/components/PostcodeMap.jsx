@@ -10,20 +10,22 @@ const PostcodeMap = ({ selectedPostcodes = [], onPostcodeSelect, selectedColour 
   const [hoveredArea, setHoveredArea] = useState(null);
   const [sortBy, setSortBy] = useState('postcode'); // 'postcode' or 'area'
 
-  // Get delivery area color for a postcode
-  const getPostcodeColor = (postcodeArea) => {
-    // First check if it's in the currently selected postcodes
-    if (selectedPostcodes.includes(postcodeArea)) {
-      return selectedColour;
-    }
-    
-    // Then check if it's in any other delivery area
-    const deliveryArea = allDeliveryAreas.find(area => 
-      area.postcodes && area.postcodes.includes(postcodeArea)
-    );
-    
-    return deliveryArea ? deliveryArea.colour : null;
-  };
+  // Get delivery area color for a postcode - memoized for performance
+  const getPostcodeColor = useMemo(() => {
+    return (postcodeArea) => {
+      // First check if it's in the currently selected postcodes
+      if (selectedPostcodes.includes(postcodeArea)) {
+        return selectedColour;
+      }
+      
+      // Then check if it's in any other delivery area
+      const deliveryArea = allDeliveryAreas.find(area => 
+        area.postcodes && area.postcodes.includes(postcodeArea)
+      );
+      
+      return deliveryArea ? deliveryArea.colour : null;
+    };
+  }, [selectedPostcodes, selectedColour, allDeliveryAreas]);
 
   // Filter and sort postcode areas - memoized to avoid recalculation
   const filteredAndSortedPostcodes = useMemo(() => {
@@ -117,6 +119,13 @@ const PostcodeMap = ({ selectedPostcodes = [], onPostcodeSelect, selectedColour 
       }
     });
   };
+
+  // Memoize GeoJSON key for performance
+  const geoJsonKey = useMemo(() => {
+    const selectedKey = selectedPostcodes.join('-');
+    const areasKey = allDeliveryAreas.map(a => a._id).join('-');
+    return `postcodes-${selectedKey}-${areasKey}`;
+  }, [selectedPostcodes, allDeliveryAreas]);
 
   return (
     <div className="postcode-map-wrapper">
@@ -232,7 +241,7 @@ const PostcodeMap = ({ selectedPostcodes = [], onPostcodeSelect, selectedColour 
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
           />
           <GeoJSON
-            key={`postcodes-${selectedPostcodes.join('-')}-${allDeliveryAreas.map(a => a._id).join('-')}`}
+            key={geoJsonKey}
             data={{ type: 'FeatureCollection', features: filteredFeatures }}
             style={style}
             onEachFeature={onEachFeature}

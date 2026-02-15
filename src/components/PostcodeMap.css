@@ -247,7 +247,9 @@
   background: #95a5a6;
 }
 
-/* Old CSS below for backwards compatibility */
+/* Legacy CSS - Retained for backwards compatibility with older component implementations
+   TODO: Review and remove once all components are migrated to new postcode-map-wrapper layout
+   Last checked: 2026-02-15 */
 .postcode-map-container {
   display: flex;
   flex-direction: column;
