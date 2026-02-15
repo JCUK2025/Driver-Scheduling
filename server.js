@@ -37,6 +37,7 @@ mongoose.connection.on('disconnected', () => {
 
 // Define API routes
 app.use('/api', require('./src/routes/deliveryAreaRoutes'));
+app.use('/api', require('./src/routes/tradeCustomerRoutes'));
 
 // Serve static files from the public directory
 app.use(express.static(path.join(__dirname, 'public')));
