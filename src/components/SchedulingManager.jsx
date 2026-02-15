@@ -172,11 +172,15 @@ const SchedulingManager = () => {
     });
 
     // Second pass: Assign P2 areas (can vary between weeks, fortnightly)
+    // Use deterministic logic to balance workload between weeks
+    let p2AreaIndex = 0;
     sortedAreas.filter(a => a.priority === 2).forEach(area => {
       if (assignedAreas.has(area._id)) return;
 
       // P2 areas are delivered fortnightly, so pick one week
-      const targetWeek = (Math.random() > 0.5) ? 1 : 2; // Could use more logic here
+      // Alternate between weeks for balanced workload
+      const targetWeek = (p2AreaIndex % 2) + 1;
+      p2AreaIndex++;
 
       for (const driver of sortedDrivers) {
         if (assignedAreas.has(area._id)) break;
