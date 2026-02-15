@@ -22,7 +22,18 @@ const DeliveryAreasManager = () => {
       setLoading(true);
       setError(null);
       const stored = localStorage.getItem(STORAGE_KEY);
-      const data = stored ? JSON.parse(stored) : [];
+      let data = [];
+      if (stored) {
+        try {
+          data = JSON.parse(stored);
+          if (!Array.isArray(data)) {
+            data = [];
+          }
+        } catch (parseError) {
+          console.error('Error parsing stored data:', parseError);
+          data = [];
+        }
+      }
       setDeliveryAreas(data);
     } catch (err) {
       setError(err.message);
@@ -45,7 +56,7 @@ const DeliveryAreasManager = () => {
     try {
       const newArea = {
         ...formData,
-        _id: Date.now().toString(), // Simple ID generation
+        _id: crypto.randomUUID?.() ?? `id-${Date.now()}-${Math.random().toString(36).substring(2)}-${Math.random().toString(36).substring(2)}`,
         createdAt: new Date().toISOString(),
       };
       const updatedAreas = [newArea, ...deliveryAreas];
