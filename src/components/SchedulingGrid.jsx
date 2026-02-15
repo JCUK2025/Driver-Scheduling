@@ -50,7 +50,7 @@ const SchedulingGrid = ({ drivers, deliveryAreas, schedule, onScheduleChange }) 
     // Check if driver can handle multi-day deliveries
     if (!canHandleMultiDayDelivery(driver, draggedArea.deliveryDays)) {
       const authorizedDriverNames = AUTHORIZED_MULTI_DAY_DRIVERS.join(' and ');
-      alert(`Only ${authorizedDriverNames} can handle ${draggedArea.deliveryDays}-day deliveries. ${driver.name} can only handle 1-day deliveries.`);
+      alert(`Only ${authorizedDriverNames} can handle ${draggedArea.deliveryDays}-day deliveries.`);
       setDraggedArea(null);
       return;
     }

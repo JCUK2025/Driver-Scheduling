@@ -14,6 +14,11 @@ export const AUTHORIZED_MULTI_DAY_DRIVERS = ['Johnnie West', 'Colin Brown'];
  * @returns {boolean} - True if driver can handle the delivery, false otherwise
  */
 export const canHandleMultiDayDelivery = (driver, deliveryDays) => {
+  // Validate inputs
+  if (!driver || !driver.name || typeof deliveryDays !== 'number') {
+    return false;
+  }
+
   // All drivers can handle 1-day deliveries
   if (deliveryDays === 1) {
     return true;
