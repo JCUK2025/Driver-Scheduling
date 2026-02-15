@@ -8,7 +8,8 @@ const DeliveryAreaForm = ({ onSubmit, onCancel, initialData, mode = 'create', al
     colour: '#3498db',
     postcodes: [],
     deliveryDays: 1,
-    priority: 1
+    priority: 1,
+    notes: ''
   });
   const [postcodeInput, setPostcodeInput] = useState('');
   const [errors, setErrors] = useState({});
@@ -21,7 +22,8 @@ const DeliveryAreaForm = ({ onSubmit, onCancel, initialData, mode = 'create', al
         colour: initialData.colour || '#3498db',
         postcodes: initialData.postcodes || [],
         deliveryDays: initialData.deliveryDays || 1,
-        priority: initialData.priority || 1
+        priority: initialData.priority || 1,
+        notes: initialData.notes || ''
       });
     }
   }, [initialData, mode]);
@@ -291,6 +293,23 @@ const DeliveryAreaForm = ({ onSubmit, onCancel, initialData, mode = 'create', al
               ))}
             </div>
           )}
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="notes">
+            Delivery Area Notes
+          </label>
+          <textarea
+            id="notes"
+            name="notes"
+            value={formData.notes}
+            onChange={handleInputChange}
+            rows="4"
+            placeholder="e.g., Geographic location notes, special delivery considerations, proximity to other areas, etc."
+          />
+          <small className="help-text">
+            Any special notes about this delivery area (geographic location, delivery restrictions, etc.)
+          </small>
         </div>
 
         {errors.submit && (

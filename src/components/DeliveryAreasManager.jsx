@@ -227,6 +227,12 @@ const DeliveryAreasManager = () => {
                       <div className="detail-item">
                         <strong>Priority:</strong> {area.priority === 2 ? 'Priority 2 (10-15 days)' : 'Priority 1 (5-10 days)'}
                       </div>
+                      {area.notes && (
+                        <div className="detail-item notes">
+                          <strong>Notes:</strong>
+                          <p>{area.notes}</p>
+                        </div>
+                      )}
                     </div>
                     <div className="area-meta">
                       <small>Created: {new Date(area.createdAt).toLocaleDateString()}</small>
