@@ -3,7 +3,7 @@ import SchedulingGrid from './SchedulingGrid';
 import DriversManager from './DriversManager';
 import jsPDF from 'jspdf';
 import 'jspdf-autotable';
-import { canHandleMultiDayDelivery } from '../utils/driverValidation';
+import { canHandleMultiDayDelivery, canHandleConsecutiveRoute } from '../utils/driverValidation';
 import './SchedulingManager.css';
 
 const STORAGE_KEYS = {
@@ -70,7 +70,7 @@ const SchedulingManager = () => {
   };
 
   const executePlanning = () => {
-    // Auto-planning algorithm
+    // Auto-planning algorithm with consecutive route support
     const newAssignments = [];
     
     // Sort drivers: P1 first, then by delivery day capability (higher first)
@@ -145,65 +145,201 @@ const SchedulingManager = () => {
       assignedAreas.add(area._id);
     };
 
-    // First pass: Assign P1 areas to both weeks (same day each week)
-    sortedAreas.filter(a => a.priority === 1).forEach(area => {
-      // Find a suitable driver and day that works for BOTH weeks
-      let assigned = false;
-
-      for (const driver of sortedDrivers) {
-        if (assigned) break;
-        if (driver.deliveryDayCapability < area.deliveryDays) continue;
+    // Helper to group consecutive route areas
+    const getConsecutiveRouteGroup = (area) => {
+      if (!area.consecutiveWith) return [area];
+      
+      // Find all areas in this consecutive group
+      const group = [];
+      const visited = new Set();
+      
+      const collectGroup = (currentArea) => {
+        if (visited.has(currentArea._id)) return;
+        visited.add(currentArea._id);
+        group.push(currentArea);
         
-        // Check if driver can handle multi-day deliveries
-        if (!canHandleMultiDayDelivery(driver, area.deliveryDays)) continue;
+        // Find areas connected to this one
+        sortedAreas.forEach(otherArea => {
+          if (otherArea.consecutiveWith === currentArea._id || 
+              currentArea.consecutiveWith === otherArea._id) {
+            collectGroup(otherArea);
+          }
+        });
+      };
+      
+      collectGroup(area);
+      
+      // Sort by routeOrder
+      group.sort((a, b) => (a.routeOrder || 999) - (b.routeOrder || 999));
+      
+      return group;
+    };
 
-        // Try each day
-        for (let dayIndex = 0; dayIndex <= DAYS.length - area.deliveryDays; dayIndex++) {
-          // For 3-day deliveries, must start by Wednesday
-          if (area.deliveryDays === 3 && dayIndex > 2) break;
-
-          // Check if available in BOTH weeks
-          if (isDriverAvailable(driver._id, 1, dayIndex, area.deliveryDays) &&
-              isDriverAvailable(driver._id, 2, dayIndex, area.deliveryDays)) {
-            // Assign to both weeks
-            assignArea(area, driver._id, 1, dayIndex);
-            assignArea(area, driver._id, 2, dayIndex);
-            assigned = true;
-            break;
+    // Helper to assign a consecutive route group
+    const assignConsecutiveRoute = (routeGroup, targetWeek) => {
+      const totalDays = routeGroup.reduce((sum, area) => sum + area.deliveryDays, 0);
+      
+      // Find drivers who can handle this consecutive route
+      for (const driver of sortedDrivers) {
+        if (driver.deliveryDayCapability < totalDays) continue;
+        
+        // Check if driver can handle multi-day and consecutive routes
+        const requiredDays = [];
+        let currentDayIndex = 0;
+        
+        // Try each possible start day
+        for (let startDayIndex = 0; startDayIndex <= DAYS.length - totalDays; startDayIndex++) {
+          // Build required days list
+          requiredDays.length = 0;
+          currentDayIndex = startDayIndex;
+          
+          for (let i = 0; i < totalDays; i++) {
+            if (currentDayIndex + i < DAYS.length) {
+              requiredDays.push(DAYS[currentDayIndex + i]);
+            }
+          }
+          
+          // Check if driver can handle this consecutive route
+          if (!canHandleConsecutiveRoute(driver, totalDays, routeGroup, requiredDays)) {
+            continue;
+          }
+          
+          // Check if driver is available for all days
+          if (!isDriverAvailable(driver._id, targetWeek, startDayIndex, totalDays)) {
+            continue;
+          }
+          
+          // Assign each area in the route consecutively
+          let assignmentDayIndex = startDayIndex;
+          let allAssigned = true;
+          
+          for (const area of routeGroup) {
+            if (assignedAreas.has(area._id)) {
+              allAssigned = false;
+              break;
+            }
+            assignArea(area, driver._id, targetWeek, assignmentDayIndex);
+            assignmentDayIndex += area.deliveryDays;
+          }
+          
+          if (allAssigned) {
+            return true; // Successfully assigned
           }
         }
       }
+      
+      return false; // Could not assign
+    };
+
+    // PASS 1: Assign P1 areas without consecutive routes to BOTH weeks
+    sortedAreas
+      .filter(a => a.priority === 1 && !a.consecutiveWith && (!a.weekAssignment || a.weekAssignment === null))
+      .forEach(area => {
+        // Find a suitable driver and day that works for BOTH weeks
+        let assigned = false;
+
+        for (const driver of sortedDrivers) {
+          if (assigned) break;
+          if (driver.deliveryDayCapability < area.deliveryDays) continue;
+          
+          // Check if driver can handle multi-day deliveries
+          if (!canHandleMultiDayDelivery(driver, area.deliveryDays)) continue;
+
+          // Try each day
+          for (let dayIndex = 0; dayIndex <= DAYS.length - area.deliveryDays; dayIndex++) {
+            // For 3-day deliveries, must start by Wednesday
+            if (area.deliveryDays === 3 && dayIndex > 2) break;
+
+            // Check if available in BOTH weeks
+            if (isDriverAvailable(driver._id, 1, dayIndex, area.deliveryDays) &&
+                isDriverAvailable(driver._id, 2, dayIndex, area.deliveryDays)) {
+              // Assign to both weeks
+              assignArea(area, driver._id, 1, dayIndex);
+              assignArea(area, driver._id, 2, dayIndex);
+              assigned = true;
+              break;
+            }
+          }
+        }
+      });
+
+    // PASS 2: Assign Week 1 consecutive routes (e.g., Northwest England + North Wales)
+    const week1ConsecutiveAreas = sortedAreas.filter(a => 
+      a.weekAssignment === 1 && a.consecutiveWith
+    );
+    
+    const week1RouteGroups = new Map();
+    week1ConsecutiveAreas.forEach(area => {
+      const group = getConsecutiveRouteGroup(area);
+      const groupKey = group.map(a => a._id).sort().join('-');
+      
+      if (!week1RouteGroups.has(groupKey)) {
+        week1RouteGroups.set(groupKey, group);
+      }
+    });
+    
+    week1RouteGroups.forEach(group => {
+      assignConsecutiveRoute(group, 1);
     });
 
-    // Second pass: Assign P2 areas (can vary between weeks, fortnightly)
+    // PASS 3: Assign Week 2 consecutive routes 
+    // This includes extending existing P1 routes or new Week 2-only consecutive routes
+    const week2ConsecutiveAreas = sortedAreas.filter(a => 
+      a.weekAssignment === 2 && a.consecutiveWith
+    );
+    
+    const week2RouteGroups = new Map();
+    week2ConsecutiveAreas.forEach(area => {
+      const group = getConsecutiveRouteGroup(area);
+      const groupKey = group.map(a => a._id).sort().join('-');
+      
+      if (!week2RouteGroups.has(groupKey)) {
+        week2RouteGroups.set(groupKey, group);
+      }
+    });
+    
+    week2RouteGroups.forEach(group => {
+      assignConsecutiveRoute(group, 2);
+    });
+
+    // PASS 4: Assign remaining P2 areas (non-consecutive)
     // Use deterministic logic to balance workload between weeks
     let p2AreaIndex = 0;
-    sortedAreas.filter(a => a.priority === 2).forEach(area => {
-      if (assignedAreas.has(area._id)) return;
+    sortedAreas
+      .filter(a => 
+        a.priority === 2 && 
+        !a.consecutiveWith && 
+        !assignedAreas.has(a._id)
+      )
+      .forEach(area => {
+        // P2 areas are delivered fortnightly, so pick one week
+        // Respect weekAssignment if set, otherwise alternate
+        let targetWeek;
+        if (area.weekAssignment) {
+          targetWeek = area.weekAssignment;
+        } else {
+          targetWeek = (p2AreaIndex % 2) + 1;
+          p2AreaIndex++;
+        }
 
-      // P2 areas are delivered fortnightly, so pick one week
-      // Alternate between weeks for balanced workload
-      const targetWeek = (p2AreaIndex % 2) + 1;
-      p2AreaIndex++;
+        for (const driver of sortedDrivers) {
+          if (assignedAreas.has(area._id)) break;
+          if (driver.deliveryDayCapability < area.deliveryDays) continue;
+          
+          // Check if driver can handle multi-day deliveries
+          if (!canHandleMultiDayDelivery(driver, area.deliveryDays)) continue;
 
-      for (const driver of sortedDrivers) {
-        if (assignedAreas.has(area._id)) break;
-        if (driver.deliveryDayCapability < area.deliveryDays) continue;
-        
-        // Check if driver can handle multi-day deliveries
-        if (!canHandleMultiDayDelivery(driver, area.deliveryDays)) continue;
+          for (let dayIndex = 0; dayIndex <= DAYS.length - area.deliveryDays; dayIndex++) {
+            // For 3-day deliveries, must start by Wednesday
+            if (area.deliveryDays === 3 && dayIndex > 2) break;
 
-        for (let dayIndex = 0; dayIndex <= DAYS.length - area.deliveryDays; dayIndex++) {
-          // For 3-day deliveries, must start by Wednesday
-          if (area.deliveryDays === 3 && dayIndex > 2) break;
-
-          if (isDriverAvailable(driver._id, targetWeek, dayIndex, area.deliveryDays)) {
-            assignArea(area, driver._id, targetWeek, dayIndex);
-            break;
+            if (isDriverAvailable(driver._id, targetWeek, dayIndex, area.deliveryDays)) {
+              assignArea(area, driver._id, targetWeek, dayIndex);
+              break;
+            }
           }
         }
-      }
-    });
+      });
 
     // Update the schedule
     handleScheduleChange(newAssignments);

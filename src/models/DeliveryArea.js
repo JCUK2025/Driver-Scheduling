@@ -39,6 +39,24 @@ const DeliveryAreaSchema = new mongoose.Schema({
     required: [true, 'Priority is required'],
     default: 1
   },
+  weekAssignment: {
+    type: Number,
+    enum: [null, 1, 2],
+    default: null,
+    required: false
+  },
+  consecutiveWith: {
+    type: String,
+    required: false,
+    default: null
+  },
+  routeOrder: {
+    type: Number,
+    min: 1,
+    max: 3,
+    required: false,
+    default: null
+  },
   createdAt: { 
     type: Date, 
     default: Date.now 
