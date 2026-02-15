@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { canHandleMultiDayDelivery } from '../utils/driverValidation';
 import './SchedulingGrid.css';
 
 const DAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
@@ -46,13 +47,12 @@ const SchedulingGrid = ({ drivers, deliveryAreas, schedule, onScheduleChange }) 
       return;
     }
 
-    // Check if driver can handle multi-day deliveries (only Johnnie West and Colin Brown for 2+ day deliveries)
-    if (draggedArea.deliveryDays >= 2) {
-      if (driver.name !== 'Johnnie West' && driver.name !== 'Colin Brown') {
-        alert(`Only Johnnie West and Colin Brown can handle ${draggedArea.deliveryDays}-day deliveries. ${driver.name} can only handle 1-day deliveries.`);
-        setDraggedArea(null);
-        return;
-      }
+    // Check if driver can handle multi-day deliveries
+    if (!canHandleMultiDayDelivery(driver, draggedArea.deliveryDays)) {
+      const authorizedDrivers = 'Johnnie West and Colin Brown';
+      alert(`Only ${authorizedDrivers} can handle ${draggedArea.deliveryDays}-day deliveries. ${driver.name} can only handle 1-day deliveries.`);
+      setDraggedArea(null);
+      return;
     }
 
     // For multi-day deliveries, ensure there are enough days remaining

@@ -3,6 +3,7 @@ import SchedulingGrid from './SchedulingGrid';
 import DriversManager from './DriversManager';
 import jsPDF from 'jspdf';
 import 'jspdf-autotable';
+import { canHandleMultiDayDelivery } from '../utils/driverValidation';
 import './SchedulingManager.css';
 
 const STORAGE_KEYS = {
@@ -103,15 +104,6 @@ const SchedulingManager = () => {
         driverSchedule[driver._id][2][day] = null;
       });
     });
-
-    // Helper to check if driver can handle multi-day deliveries
-    const canHandleMultiDayDelivery = (driver, deliveryDays) => {
-      // Only Johnnie West and Colin Brown can handle 2-day and 3-day deliveries
-      if (deliveryDays >= 2) {
-        return driver.name === 'Johnnie West' || driver.name === 'Colin Brown';
-      }
-      return true;
-    };
 
     // Helper to check if driver is available for a range of days
     const isDriverAvailable = (driverId, week, startDayIndex, numDays) => {
