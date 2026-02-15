@@ -120,3 +120,70 @@
 .trade-customer-form .btn-secondary:hover:not(:disabled) {
   background: #d5dbdb;
 }
+
+/* Postcode input styles */
+.trade-customer-form .postcode-input-group {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.trade-customer-form .postcode-input-group input {
+  flex: 1;
+}
+
+.trade-customer-form .btn-add-postcode {
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.trade-customer-form .btn-add-postcode:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(102, 126, 234, 0.4);
+}
+
+.trade-customer-form .postcodes-list {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.trade-customer-form .postcode-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.trade-customer-form .btn-remove-postcode {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.25rem;
+  cursor: pointer;
+  padding: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.2s ease;
+}
+
+.trade-customer-form .btn-remove-postcode:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+

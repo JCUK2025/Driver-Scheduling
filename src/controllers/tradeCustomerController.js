@@ -8,12 +8,12 @@ const isMongoConnected = () => mongoose.connection.readyState === 1;
 // Create a new trade customer
 const createTradeCustomer = async (req, res) => {
   try {
-    const { name, postcodeArea, priority, notes } = req.body;
+    const { name, postcodes, priority, notes } = req.body;
 
     // Validate required fields
-    if (!name || !postcodeArea) {
+    if (!name || !postcodes || !Array.isArray(postcodes) || postcodes.length === 0) {
       return res.status(400).json({ 
-        error: 'Customer name and postcode area are required' 
+        error: 'Customer name and at least one postcode area are required' 
       });
     }
 
@@ -21,7 +21,7 @@ const createTradeCustomer = async (req, res) => {
     if (!isMongoConnected()) {
       const customer = await inMemoryStore.createTradeCustomer({
         name,
-        postcodeArea: postcodeArea.toUpperCase(),
+        postcodes: postcodes.map(p => p.toUpperCase()),
         priority: priority || 'P1',
         notes: notes || ''
       });
@@ -30,7 +30,7 @@ const createTradeCustomer = async (req, res) => {
 
     const tradeCustomer = new TradeCustomer({
       name,
-      postcodeArea,
+      postcodes,
       priority: priority || 'P1',
       notes: notes || ''
     });
@@ -86,12 +86,12 @@ const getTradeCustomerById = async (req, res) => {
 // Update a trade customer
 const updateTradeCustomer = async (req, res) => {
   try {
-    const { name, postcodeArea, priority, notes } = req.body;
+    const { name, postcodes, priority, notes } = req.body;
 
     // Validate required fields
-    if (!name || !postcodeArea) {
+    if (!name || !postcodes || !Array.isArray(postcodes) || postcodes.length === 0) {
       return res.status(400).json({ 
-        error: 'Customer name and postcode area are required' 
+        error: 'Customer name and at least one postcode area are required' 
       });
     }
 
@@ -99,7 +99,7 @@ const updateTradeCustomer = async (req, res) => {
     if (!isMongoConnected()) {
       const customer = await inMemoryStore.updateTradeCustomer(req.params.id, {
         name,
-        postcodeArea: postcodeArea.toUpperCase(),
+        postcodes: postcodes.map(p => p.toUpperCase()),
         priority: priority || 'P1',
         notes: notes || ''
       });
@@ -115,7 +115,7 @@ const updateTradeCustomer = async (req, res) => {
     }
 
     customer.name = name;
-    customer.postcodeArea = postcodeArea;
+    customer.postcodes = postcodes;
     customer.priority = priority || customer.priority;
     customer.notes = notes !== undefined ? notes : customer.notes;
 

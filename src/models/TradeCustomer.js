@@ -6,10 +6,15 @@ const TradeCustomerSchema = new mongoose.Schema({
     required: [true, 'Customer name is required'],
     trim: true
   },
-  postcodeArea: { 
-    type: String, 
-    required: [true, 'Postcode area is required'],
-    trim: true
+  postcodes: { 
+    type: [String], 
+    required: [true, 'At least one postcode area is required'],
+    validate: {
+      validator: function(v) {
+        return v && v.length > 0;
+      },
+      message: 'At least one postcode area is required'
+    }
   },
   priority: {
     type: String,
@@ -38,10 +43,10 @@ TradeCustomerSchema.pre('save', function(next) {
   next();
 });
 
-// Ensure postcode area is uppercase
+// Ensure postcode areas are uppercase
 TradeCustomerSchema.pre('save', function(next) {
-  if (this.postcodeArea) {
-    this.postcodeArea = this.postcodeArea.toUpperCase();
+  if (this.postcodes && Array.isArray(this.postcodes)) {
+    this.postcodes = this.postcodes.map(p => p.toUpperCase());
   }
   next();
 });

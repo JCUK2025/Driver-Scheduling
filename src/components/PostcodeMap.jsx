@@ -5,7 +5,7 @@ import './PostcodeMap.css';
 import L from 'leaflet';
 import postcodeAreasData from '../data/uk-postcode-areas.geojson';
 
-const PostcodeMap = ({ selectedPostcodes = [], onPostcodeSelect, selectedColour = '#3498db', allDeliveryAreas = [] }) => {
+const PostcodeMap = ({ selectedPostcodes = [], onPostcodeSelect, selectedColour = '#3498db', allDeliveryAreas = [], allTradeCustomers = [] }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [hoveredArea, setHoveredArea] = useState(null);
   const [sortBy, setSortBy] = useState('postcode'); // 'postcode' or 'area'
@@ -18,14 +18,28 @@ const PostcodeMap = ({ selectedPostcodes = [], onPostcodeSelect, selectedColour 
         return selectedColour;
       }
       
-      // Then check if it's in any other delivery area
+      // Then check if it's in any delivery area
       const deliveryArea = allDeliveryAreas.find(area => 
         area.postcodes && area.postcodes.includes(postcodeArea)
       );
       
-      return deliveryArea ? deliveryArea.colour : null;
+      if (deliveryArea) {
+        return deliveryArea.colour;
+      }
+      
+      // Then check if it's in any trade customer
+      const tradeCustomer = allTradeCustomers.find(customer => 
+        customer.postcodes && customer.postcodes.includes(postcodeArea)
+      );
+      
+      if (tradeCustomer) {
+        // Use a different shade for trade customers (purple)
+        return '#9b59b6';
+      }
+      
+      return null;
     };
-  }, [selectedPostcodes, selectedColour, allDeliveryAreas]);
+  }, [selectedPostcodes, selectedColour, allDeliveryAreas, allTradeCustomers]);
 
   // Filter and sort postcode areas - memoized to avoid recalculation
   const filteredAndSortedPostcodes = useMemo(() => {
